@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FakestoreApi</title>
+    <!-- <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/"> -->
+    <script>
+        function FetchData()
+        {
+            fetch("http://fakestoreapi.com/products")
+            .then(function(response)
+            {
+                return response.json();
+            }).then(function(products)
+            {
+                for(var item of products)
+                {
+                    var tr = document.createElement("tr");
+                    var tdTitle = document.createElement("td");
+                    var tdPrice = document.createElement("td");
+                    var tdPreview = document.createElement("td");
+
+                    tdTitle.innerHTML = item.title;
+                    tdPrice.innerHTML = item.price;
+
+                    var img = document.createElement("img");
+                    img.src = item.image;
+                    img.width = "100px";
+                    img.height = "100px";
+
+                    tdPreview.appendChild(img);
+
+                    tr.appendChild(tdTitle);
+                    tr.appendChild(tdPrice);
+                    tr.appendChild(tdPreview);
+
+                    document.querySelector("tbody").appendChild(tr);
+                }
+            })
+        }
+    </script>
+</head>
+<body onload="FetchData()">
+    <table border="5px">
+         <thead>
+            <tr>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Preview</th>
+            </tr>
+         </thead>
+         <tbody>
+
+         </tbody>
+    </table>
+</body>
+</html>
