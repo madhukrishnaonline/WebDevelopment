@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Shopping</title>
+    <link rel="stylesheet" href="../../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        var Categories = ["Select any category","Life Style","Electronics","Footwear"];
+
+        var LifeStyle = ["Select any Product","Farbot T-shirt","FloralPrint Shirt","HipHop T-shirt"];
+        var Electronics = ["Select any Product","Electric Cooker","Electric Stove","Steel Cooker"];
+        var Footwear = ["Select any Product","Sneakers","SportsShoes","Shoes"];
+        var products = [];
+
+        var data = [
+            {Name:"Farbot T-shirt",Price:599,Photo:"../../public/assets/Farbot-Tshirt.jpg",},
+            {Name:"FloralPrint Shirt",Price:699,Photo:"../../public/assets/FloralPrintShirt.jpg"},
+            {Name:"Hip-Hop T-shirt",Price:759,Photo:"../../public/assets/HipHop-Tshirt.jpg"},
+            {Name:"Electric Cooker",Price:799,Photo:"../../public/assets/Cooker.jpg"},
+            {Name:"Electric Stove",Price:899,Photo:"../../public/assets/ElectricStove.jpg"},
+            {Name:"Steel Cooker",Price:799,Photo:"../../public/assets/Steel"},
+            {Name:"Sneaker",Price:899,Photo:"../../public/assets/Sneakers.jpg"},
+            {Name:"SportsShoes",Price:999,Photo:"../../public/assets/SportsShoe.jpg"},
+            {Name:"Shoes",Price:699,Photo:"../../public/assets/Shoe2.jpg"},
+        ]
+        function LoadCategories()
+        {
+            var lstCategories = document.getElementById("lstCategories");
+            for(var item of Categories)
+            {
+                var option = document.createElement("option");
+               
+                option.text = item;
+                option.value = item;
+
+                lstCategories.appendChild(option);
+            }
+        }
+        
+        function bodyLoad()
+        {
+            LoadCategories();
+            LoadCartItems();
+        }
+        function LoadProducts()
+        {
+            var lstProducts = document.getElementById("lstProducts");
+            for(var item of products)
+            {
+                var option = document.createElement("option");
+               
+                option.text = item;
+                option.value = item;
+
+                lstProducts.appendChild(option);
+            }
+        }
+        function CategoryChanged()
+        {
+            var selectedCategory = document.getElementById("lstCategories").value;
+            lstProducts.innerHTML = "";
+            switch(selectedCategory)
+            {
+                case "Life Style":
+                    products = LifeStyle;
+                    LoadProducts();
+                    break;
+                case "Electronics":
+                    products = Electronics;
+                    LoadProducts();
+                    break;
+                case "Footwear":
+                    products = Footwear;
+                    LoadProducts();
+                    break;
+                default:
+                    products = ["Please select a category"];
+                    LoadProducts();
+                    break;
+            }
+        }
+        var SearchedProduct;
+        var CartItems = [];
+
+        function LoadCartItems()
+        {
+            document.getElementById("lblCart").innerHTML = CartItems.length;
+        }
+        function ProductChanged()
+        {
+            var selectedProduct = document.getElementById("lstProducts").value;
+
+            var lblName = document.getElementById("lblName");
+            var lblPrice = document.getElementById("lblPrice");
+            var lblImg = document.getElementById("lblImg");
+            
+            SearchedProduct = data.find(function (item)
+            {
+                return item.Name==selectedProduct;
+            })
+           lblName.innerHTML = SearchedProduct.Name;
+           lblPrice.innerHTML = SearchedProduct.Price;
+           lblImg.src = SearchedProduct.Photo;
+        }
+        function AddToCart()
+        {
+            CartItems.push(SearchedProduct);
+            LoadCartItems();
+            DisplayCartItems();
+        }
+        function DisplayCartItems()
+        {
+           var tbody = document.getElementById("tbody");
+           tbody.innerHTML = " ";
+           for(var items of CartItems)
+           {
+            var tr = document.createElement("tr");
+            var tdName = document.createElement("td");
+            var tdPrice = document.createElement("td");
+            var tdPhoto = document.createElement("td");
+
+            tdName.innerHTML = items.Name;
+            tdPrice.innerHTML ="&#8377;"+  items.Price;
+
+            var img = document.createElement("img");
+            img.src = items.Photo;
+            img.width = "50";
+            img.height="50";
+ 
+            tr.appendChild(tdName);
+            tr.appendChild(tdPrice);
+            tdPhoto.appendChild(img);
+            tr.appendChild(tdPhoto);
+            tbody.appendChild(tr);
+           }
+        }
+    </script>
+</head>
+<body onload="bodyLoad()" class="container-fluid">
+    <header>
+        <div class="bg-danger text-white text-center p-2">
+            <h1><span class="bi bi-cart4"></span> Amazon</h1> 
+        </div>
+    </header>
+    <section>
+        <div class="row">
+            <div class="col-3">
+                <div class="mt-3">
+                    <label class="form-label">Select Category</label>
+                    <select onchange="CategoryChanged()" class="form-select" id="lstCategories">
+    
+                    </select>
+                </div>
+                <div class="mt-3">
+                    <label class="form-label">Select Product</label>
+                    <select onchange="ProductChanged()" class="form-select" id="lstProducts">
+    
+                    </select>
+                </div>
+                <div class="card mt-3 text-center">
+                   <div class="card-header">
+                      <span id="lblName"> </span>
+                   </div>
+                   <div class="card-body">
+                     <img  id="lblImg" width="100%" height="200">
+                     <span id="lblPrice" class="bi bi-currency-rupee"></span>
+                   </div>
+                   <div class="card-footer  d-grid">
+                     <button onclick="AddToCart()" id="btnAdd" class="btn btn-danger">
+                        <span class="bi bi-cart"></span>
+                        Add to Cart
+                    </button>
+                   </div>
+                </div>
+            </div>
+            <div class="col-7">
+                 
+            </div>
+            <div class="col-2">
+                <div class="mt-3 d-grid">
+                    <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#details">
+                        <span id="lblCart" class="badge bg-dark"></span> 
+                        <span class="bi bi-cart3"></span>
+                        Your Cart Items
+                     </button>
+                </div>
+            </div>
+            <div class="modal fade" id="details">
+               <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="text-primary">Cart Items</h2>
+                        <button class="btn btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                         <table class="table table-hover">
+                            <thead class="">
+                              <tr>
+                                  <th>Name</th>
+                                  <th>Price</th>
+                                  <th>Preview</th>
+                              </tr> 
+                            </thead>
+                            <tbody id="tbody">
+                                 
+                            </tbody>
+                         </table>
+                    </div>
+                    <div class="modal-footer"> 
+                          <button class="btn btn-success">Buy</button>
+                          <button class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+                    </div>
+                  </div>
+               </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="../../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>
