@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+        <!-- name = prompt("Enter your Name::");
+             if(name==null)
+             {
+                document.write("You Cancelled...");
+             }
+             else if(name=="")
+             {
+                document.write("Name Can't be Empty....");
+             }
+             else{
+                document.getElementById("name").innerHTML="Hello !"+name;
+             }-->
+        <script type="text/javascript">
+           function CreateClick()
+           {
+            folderName = prompt("Enter Folder Name:","New_Folder");
+             if(folderName==null)
+             {
+                document.write("You Cancelled...");
+             }
+             else if(folderName=="")
+             {
+                document.write("Name Can't be Empty....");
+             }
+             else{
+                document.getElementById("folderName").innerHTML="Folder Created :"+folderName;
+             }
+           }
+        </script>
+    </head>
+    <body class="container">
+       <div class="form-group mt-xl-5">
+          <button onclick="CreateClick()" class="btn btn-primary">Create Folder</button>
+       </div>
+       <div class="form-group"> 
+         <h3 id="folderName"></h3>
+       </div>
+    </body>
+</html>

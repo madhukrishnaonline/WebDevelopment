@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        function products()
+        {
+            var arr = ["All","Electronics","Fashion","Footwear","Lifestyle"];
+            //var select = document.getElementById("select");
+            var olist = document.getElementById("list");
+            for(var item of arr)
+            {
+              //var option = document.createElement("option");
+               var list = document.createElement("li");
+               var input = document.createElement("input");
+               var span = document.createElement("span");
+               input.type="checkbox";
+               input.value=item;
+               span.innerHTML=item;
+               list.appendChild(input);
+               list.appendChild(span);
+               olist.appendChild(list);
+              /* option.innerHTML= item;
+               select.appendChild(option);*/
+
+            }
+        }
+    </script>
+</head>
+<body class="container" onload="products()">
+   <h1>Products</h1>
+   <div>
+      <!--<select id="select">
+
+      </select>
+    -->
+      <ul class="mt-3" id="list">
+          
+      </ul>
+   </div>
+</body>
+</html>

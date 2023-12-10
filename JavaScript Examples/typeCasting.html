@@ -1,0 +1,16 @@
+<script>
+    function type()
+    {
+    var name = "Madhu";
+    var age = prompt("Please enter your age");
+    var msg = `Hello ! ${name} you will be ${parseInt(age)+1} next years`;
+    if(isNaN(age))
+    {
+            document.writeln(`age must be number`);
+    }
+    else{
+        document.writeln(msg);
+    }
+    }
+    type();
+</script>

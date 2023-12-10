@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <script>
+       /*function BtnClicked(obj) this
+       {
+           document.write(`id=${obj.id}<br>name=${obj.name}<br>value=${obj.value}<br>ClassName=${obj.className}`);
+       }*/
+      /* function BtnClicked(obj) //event
+       {
+         for(var events in obj)
+         {
+            document.write(`${events}<br>`);
+         }
+       }*/
+       function BtnClicked(obj)
+       {
+         switch(obj.value)
+         {
+            case "Insert":
+                document.write("Record Inserted....");
+                break;
+            case "Delete":
+                document.write("Record Deleted....");
+                break;
+            case "Update":
+                document.write("Record Updated....");
+                break;
+         }
+       }
+    </script>
+</head>
+<body>
+    <!-- <button class="btn btn-primary" id="btnClick" name="submit" value="Click Here" onclick="BtnClicked(event)">Click Here</button> -->
+    <button value="Insert" onclick="BtnClicked(this)">Insert</button>
+    <button value="Delete" onclick="BtnClicked(this)">Delete</button>
+    <button value="Update" onclick="BtnClicked(this)">Update</button>
+</body>
+</html>

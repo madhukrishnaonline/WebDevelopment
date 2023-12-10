@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+
+    <script>
+        function LoadCategories(url)
+        {
+            fetch(url)
+            .then(function(res)
+            {
+                return res.json();
+            })
+            .then(function(categories)
+            {
+                categories.unshift("All");
+               for(var category of categories)
+               {
+                  var option = document.createElement("option");
+                  option.text = category.toUpperCase();
+                  option.value = category;
+
+                  document.getElementById("lstCategories").appendChild(option);
+
+               }
+            })
+        }
+        function LoadProducts(url)
+        {
+           document.getElementById("products").innerHTML =" ";
+            fetch(url)
+            .then(function(res)
+            {
+                return res.json();
+            })
+            .then(function(products)
+            {
+               for(var product of products)
+               {
+                var card = document.createElement("div");
+                card.className="card p-2 m-2";
+                card.style.width = "350px";
+                card.innerHTML = `
+                    <div class="card-header text-center" style="height:150px;">
+                       <h3>${product.title}</h3>
+                     </div>  
+                     <div class="card-body">
+                       <img src="${product.image}" width="100%" height="200px">
+                     </div>
+                     <div class="card-footer">
+                        <h3><span class="bi bi-currency-dollar"></span> ${product.price}</h3>
+                        <div class="d-grid">
+                          <button onclick="AddToCart(${product.id})" class="btn btn-danger" >Add to Cart</button>    
+                        </div>
+                     </div>
+                  `;
+                  document.getElementById("products").appendChild(card);
+               }
+            })
+        }
+        function ChangeCategory()
+        {
+            var category = document.getElementById("lstCategories").value;
+            if(category=="All")
+            {
+                LoadProducts("http://fakestoreapi.com/products");
+            }
+            else
+            {
+                LoadProducts(`http://fakestoreapi.com/products/category/${category}`);
+            }
+        }
+        function AddToCart(id)
+        {
+            fetch(`http://fakestoreapi.com/products/${id}`)
+            .then(function(response)
+            {
+                return response.json();
+            })
+            .then(function(product)
+            {
+                CartItems.push(product);
+                alert(`${product.title}\n Added to Cart`);
+                CountCartItems();
+            });
+        }
+        var CartItems = [];
+        function CountCartItems()
+        {
+            document.getElementById("countProducts").innerHTML = CartItems.length; 
+        } 
+        function ShowCartItems()
+        {
+            document.getElementById("ModalCard").innerHTML =" ";
+           for(var cart of CartItems)
+           {
+             var card = document.createElement("div");
+             var cardBody = document.createElement("div");
+             var row = document.createElement("div");
+             var colLeft = document.createElement("div");
+             var colRight = document.createElement("div");
+
+             card.className = "card p-2 m-2";
+             cardBody.className = "card-body";
+             row.className ="row";
+             colLeft.className = "col d-flex justify-content-center align-items-center";
+             colRight.className = "col";
+
+             var lblImage = document.createElement("div");
+             var lblCategory = document.createElement("h5");
+             var lblTitle = document.createElement("h3");
+             var lblDescription= document.createElement("h5");
+             var lblPrice = document.createElement("h4");
+             var lblRating = document.createElement("h6");
+
+             lblImage.innerHTML = `<img src="${cart.image}" width="100%" height="250px">`;
+             lblCategory.innerHTML = cart.category.toUpperCase();
+             lblTitle.innerHTML = cart.title;
+             lblDescription.innerHTML = cart.description;
+             lblPrice.className = "bi bi-tag-fill";
+             lblPrice.innerHTML = "&dollar;"+  cart.price;
+             lblRating.className = "bi bi-star-fill bi bi-star-fill bi bi-star-fill bi bi-star-half";
+             lblRating.innerHTML = cart.rating.rate +`[${cart.rating.count}]`;
+             
+             colLeft.appendChild(lblImage);
+             colRight.appendChild(lblCategory);
+             colRight.appendChild(lblTitle);
+             colRight.appendChild(lblDescription);
+             colRight.appendChild(lblPrice);
+             colRight.appendChild(lblRating);
+
+             row.appendChild(colLeft);
+             row.appendChild(colRight);
+
+             cardBody.appendChild(row);
+             card.appendChild(cardBody);
+
+             document.getElementById("ModalCard").appendChild(card);
+           }
+        }
+        function BodyLoad()
+        {
+            LoadCategories("http://fakestoreapi.com/products/categories");
+            LoadProducts("http://fakestoreapi.com/products");
+            CountCartItems();
+        }
+    </script>
+</head>
+<body onload="BodyLoad()" class="container-fluid">
+    <header class="text-center bg-danger p-4">
+        <h1><span class="bi bi-cart4"></span> Amazon</h1>
+    </header>
+    <section class="mt-2">
+        <div class="row">
+            <nav class="col-2">
+              <div id="categories">
+                  <h4>Select Categories</h4>
+                  <select id="lstCategories" onchange="ChangeCategory()" class="form-select">
+                    
+                  </select>
+              </div>
+            </nav>
+            <main class="col-8">
+                <div class="d-flex flex-wrap overflow-auto" style="height: 700px;" id="products">
+                     
+                </div>
+            </main>
+            <article class="col-2">
+                 <div class="d-grid">
+                    <button onclick="ShowCartItems()" data-bs-toggle="modal" data-bs-target="#displayItems"  class="btn btn-warning">[<span id="countProducts"></span>] <span class="bi bi-cart-check"></span> Cart Items</button>
+                 </div>
+            </article>
+        </div>
+        <div class="modal modal-xl modal-fullscreen" id="displayItems">
+           <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                     <h2 class="text-primary">Cart Items Details</h2>
+                     <button class="btn-close text-danger" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="ModalCard">
+                         
+                    </div>
+                </div>
+                <div class="modal-footer">
+                     <button class="btn btn-success" data-bs-dismiss="modal">Buy</button>
+                     <button class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+                </div>
+              </div>
+           </div>
+        </div>
+    </section>
+
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+        <script type="text/javascript">
+           function RegisterClick()
+           {
+               document.getElementById("txtName").innerHTML = document.getElementById("lblName").value;
+               document.getElementById("price").innerHTML = document.getElementById("lblprice").value;
+               document.getElementById("shipping").innerHTML = document.getElementById("ShippedTo").value;
+
+               stock = document.getElementById("InStock");
+               status=" ";
+               if(stock.checked)
+               {
+                status="Available";
+               }
+               else{
+                status="Out of Stock";
+               }
+               document.getElementById("stockk").innerHTML=status;
+
+           }
+        </script>
+    </head>
+    <body class="container">
+        <div class="mt-5 form-group">
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#products">Add New Product</button>
+            <div class="modal fade" id="products">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                     <div class="modal-header">
+                        <h2 class="text-primary">Register Product Details</h2> 
+                        <button class="btn btn-close" data-bs-dismiss="modal"></button>
+                     </div>
+                     <div class="modal-body">
+                        <div>
+                            <dt class="form-label">Product Name</dt>
+                            <dd>
+                            <input type="text" id="lblName" class="form-control">
+                            </dd>
+                            <dt class="form-label">Product Price</dt>
+                            <dd>
+                                <input type="text" id="lblprice" class="form-control">
+                            </dd>
+                            <dt class="form-label">Shipped To</dt>
+                            <dd>
+                               <select class="form-select"  id="ShippedTo">
+                                <option value="">Hyd</option>
+                                <option value="">Delhi</option>
+                                <option value="">Mumbai</option>
+                               </select>
+                            </dd>
+                            <dt class="form-label">In Stock</dt>
+                            <dd class="form-check form-switch">
+                                <input type="checkbox" id="InStock" class="form-check-input">Yes
+                            </dd>
+                        </div>
+                     </div>
+                     <div class="modal-footer">
+                        <button class="btn btn-primary" data-bs-dismiss="modal" onclick="RegisterClick()">Register</button>
+                        <button class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+                     </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid mt-5">
+            <h3 class="text-primary">Product Details</h3>
+            <div class="row" >
+               <dt class="col-2">Name</dt>
+               <dd class="col-10" id="txtName"></dd>
+               <dt class="col-2">Price</dt>
+               <dd class="col-10" id="price"></dd>
+               <dt class="col-2">Shipped To</dt>
+               <dd class="col-10" id="shipping"></dd>
+               <dt class="col-2">Stock Available</dt>
+               <dd class="col-10" id="stockk"></dd>
+            </div>
+        </div>
+        
+        <script src="../node_modules/jquery/dist/jquery.js"></script>
+        <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    </body>
+</html>

@@ -1,0 +1,41 @@
+<script>
+    function object()
+    {
+        var obj = 
+        {
+            Name : '',
+            Price :0,
+            Qty : 0,
+            Stock :'',
+            ShippedTo : [],
+            Total : function()
+            {
+                return this.Price * this.Qty;
+            },
+            Print:function()
+            {
+                document.writeln(`
+                   <dt>Name</dt>
+                   <dd>${this.Name}</dd>
+                   <dt>Price</dt>
+                   <dd>${this.Price}</dd>
+                   <dt>Qty</dt>
+                   <dd>${this.Qty}</dd>
+                   <dt>Stock</dt>
+                   <dd>${(this.Stock==true)?"Available":"Out of Stock"}</dd>
+                   <dt>Total</dt>
+                   <dd> &#8377 ${this.Total()}</dd>
+                   <dt>ShippedTo</dt>
+                   <dd>${this.ShippedTo.toString()}</dd>
+                `);
+            }//print
+        };//obj
+        obj.Name="Nike Casuals";
+        obj.Price=599.99;
+        obj.Qty=2;
+        obj.Stock='true';
+        obj.ShippedTo=["Hyd","Chennai"];
+        obj.Print();
+    }//function
+    object();
+</script>

@@ -1,0 +1,26 @@
+<script>
+function Copied()
+{
+ document.oncopy =  () => {
+    alert("You Cannot Copy msg from here");
+    return false;
+};
+}
+function Cut()
+{
+    document.oncut = () => {
+      alert("You Cannot Cut msg from here");
+      return false;
+    };
+}
+function Pasted()
+{
+    document.onpaste = () => {
+        alert("You Cannot Paste here");
+        return false;
+    };
+}
+</script>
+<div>
+    <textarea onpaste="Pasted()" oncopy="Copied()" oncut="Cut()" name="" id="" cols="30" rows="10"></textarea>
+</div>

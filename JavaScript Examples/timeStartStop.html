@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+       function LoadTime()
+       {
+        timer = setInterval(TimeClicks, 1000);
+       }
+       function TimeClicks()
+       {
+        var now = new Date();
+        document.getElementById("time").innerHTML = now.toLocaleTimeString();
+         TimeClicks();
+       }
+       function StartTime()
+       {
+        LoadTime();
+       }
+       function PauseTime()
+       {
+          clearInterval(timer);
+       }
+    </script>
+</head>
+<body onload="LoadTime()">
+    <div style="margin-top: 300px;" align="center">
+       <h1 id="time"></h1>
+       <div>
+          <button onclick="StartTime()">Start Time</button>
+          <button onclick="PauseTime()">Pause Time</button>
+       </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        function Validate()
+        {
+            var email = document.getElementById('mail').value;
+            var verify = document.getElementById('verifyEmail');
+             if(email.endsWith("@gmail.com"))
+             {
+               verify.className="bi bi-check2-circle text-success input-group-text";
+             }
+             else
+             {
+                verify.className="bi bi-x-circle text-danger input-group-text";
+             }
+             var card = document.getElementById("card").value;
+             var verifycard = document.getElementById("imgcard");
+             if(card.startsWith("4444"))
+             {
+                verifyCard.src="../../assets/visa-debit.jpg";
+             }
+             else
+             {
+                verifyCard.src="../../assets/mastercard.jpg";
+             }
+        }
+    </script>
+</head>
+<body class="container-fluid">
+    <div class="container-fluid mt-5">
+        <div class="input-group w-50">
+            <div class="input-group-text">Your Email</div>
+            <input type="text" name="mail" id="mail" class="form-control" onkeyup="Validate()" required>
+            <div class="input-group-text" id="verifyEmail"></div>
+        </div>
+        <div class="input-group w-75 mt-5">
+            <div class="input-group-text">Card Number</div>
+            <input type="text" name="cardNo" id="card" class="form-control" onkeyup="Validate()" required>
+            <div class="input-group-text" >
+                <img id="imgCard" width="100px" height="30px">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

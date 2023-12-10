@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--alert("Record Will be Deleted.....");
+
+         if(k==true)
+              {
+                alert("Record Deleted Successfully....")
+              }
+              else{
+                alert("Canceled....");
+              }
+
+            if(k==true)
+             {
+                document.write("<h1>Record Deleted suceessfully....<h1>");
+             }
+             else{
+                document.write("Canceled....");
+             }-->
+       <script type="text/javascript">
+           function btnClick()
+           {
+              k = confirm("Record Will be Deleted....");
+             console.log("Records Will be Deleted....")
+             if(k==true)
+             {
+                document.getElementById("msg").innerHTML="<font color=`green`>Record Deleted...</font>"
+                console.warn("Record Deleted");
+             }
+             else{
+                document.getElementById("msg").outerHTML="Canceled...."
+                console.error("Canceled...");
+             }
+           }
+       </script>
+    </head>
+    <body>
+        <h1>Records</h1>
+        <button onclick="btnClick()">Delete</button>
+        <p id="msg"></p>
+    </body>
+</html>

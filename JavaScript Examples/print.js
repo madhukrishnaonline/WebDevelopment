@@ -1,0 +1,4 @@
+    function println()
+    {
+       window.print();
+    }

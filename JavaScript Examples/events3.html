@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events.html</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+        .img{
+            border: 5px solid gray;
+            box-shadow:5px 8px 4px gray;
+            margin-right: 10px;
+        }
+    </style>
+    <script>
+        function Clicked(obj)
+        {
+             document.write(`ClientX-${obj.clientX}`);
+        }
+        function ImageMove(e) 
+        {
+           var pic = document.getElementById("pic");
+           pic.style.position = "fixed";
+           pic.style.left = e.clientX+"px";
+           pic.style.top = e.clientY+"px";
+        }
+    </script>
+</head>
+<body class="container-fluid">
+    <div class="container mt-5">
+         <marquee behavior="alternative" direction="right" scrollamount="100" onmouseover="this.stop()" onmouseout="this.start()">
+            <img src="../public/assets/Attitude.jpg" class="img" width="200px" height="300px" alt="">
+            <img src="../public/assets/Attention.jpg" class="img" width="200px" height="300px" alt="">
+            <img src="../public/assets/B T-shirt.jpg" class="img" width="200px" height="300px" alt="">
+         </marquee>
+    </div>
+    <div>
+        <button class="btn btn-outline-primary" onclick="Clicked(event)">Click here</button>
+    </div>
+    <div class="mt-5" style="height:500px" onmousemove="ImageMove(event)">
+        <img src="../public/assets/indian-flag.gif" id="pic" width="100px" height="100px"  alt="">
+    </div>
+</body>
+</html>

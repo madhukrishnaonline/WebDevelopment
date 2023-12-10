@@ -1,0 +1,45 @@
+<script>
+ function a1()
+ {
+    var arr = ["Sneakers",4999,"Available",["Hyd","Mumbai"]];
+   /* document.writeln(`
+    Name = ${arr[0]} <br>
+    Price = ${arr[1]} <br>
+    Stock = ${arr[2]} <br>
+    Shipped To = ${arr[3]} <br>`
+    );
+    arr[4]();*/
+    /*for(var property in arr)
+    {
+      document.write(`[${property}] ${arr[property]} <br>`);
+    }*/
+    /*var [Name,Price,Stock,ShippedTo,Hello] = arr;
+    document.writeln(`
+      Name: ${Name} <br>
+      Price: ${Price} <br>
+      Stock: ${Stock} <br>
+      ShiipedTo: ${ShippedTo} <br>`
+    );
+    Hello();*/
+    /*for(var property of arr)
+    {
+      document.write(`[${property}] <br>`);
+    }*/
+    /*for(var i=0;i<arr.length;i++)
+    { 
+     if(arr[i]=="Java Developer")
+     {
+        continue;
+     }
+     document.write(`${arr[i]} <br>`);
+  }*/
+    arr.map(function (property) 
+    { 
+    document.write
+        (`
+           <option>${property}</option>`
+        );
+    });
+  }
+  a1();
+</script>

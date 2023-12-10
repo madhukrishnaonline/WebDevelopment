@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timers</title>
+    <script>
+        function m1()
+        {
+            document.getElementById("msg").innerHTML = "Hi! ==> msg-1";
+        }
+        function m2()
+        {
+            document.getElementById("msg").innerHTML = "How Are You! ==> msg-2";
+        }
+        function m3()
+        {
+            document.getElementById("msg").innerHTML = "Welcome to JavaScript ==> msg-3";
+        }
+        function BodyLoad()
+        {
+          msg1 = setTimeout(m1,3000);
+          msg2 = setTimeout(m2,4000);
+          msg3 = setTimeout(m3,5000);
+        }
+        function CancelClick()
+        {
+            clearTimeout(msg2);
+        }
+     </script>
+</head>
+<body onload="BodyLoad()">
+    <div align="center" style="margin-top: 100px;">
+        <h1 id="msg"></h1>
+    </div>
+    <div style="margin-top: 100px;">
+        <button onclick="CancelClick()">Cancel</button>
+    </div>
+</body>
+</html>

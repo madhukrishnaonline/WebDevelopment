@@ -1,0 +1,17 @@
+<script>
+    //global
+    var a = 20;
+    let b = 30;
+    const c = 40;
+    function global()
+    {
+        window.x = 10; //global 
+    }
+    document.writeln(`f()1 : a = ${a}, b = ${b}, c = ${c}<br>`);
+    function global2()
+    {
+        document.writeln(`fu()2 : a = ${a}, b = ${b}, c = ${c}<br>`);
+    }
+    global();
+    global2();
+</script>

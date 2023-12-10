@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops</title>
+    <script>
+        var arr = [
+            {Name:"Madhu Krishna",Age:23,Roles:["Full Stack Developer","Java Developer"]},
+            {Name:"Lokesh",Age:23,Roles:["Full Stack Developer","Java Developer"]},
+            {Name:"Naresh",Age:23,Roles:["Full Stack Developer","Java Developer"]}
+        ];
+     
+       function bodyLoad()
+       {
+        var ol = document.getElementById("ol");
+        var i=0
+        for(;;)
+        {
+            i<arr.length
+            var li = document.createElement("li");
+            li.innerHTML = arr[i].Name;
+            ol.appendChild(li);
+            
+            var ul = document.createElement("ul");
+            var j=0
+            for(;j<arr[i].Roles.length;j++)
+            {
+                
+                var li2 = document.createElement("li");
+                li2.innerHTML = arr[i].Roles[j];
+                ul.appendChild(li2);
+               
+            }
+            li.appendChild(ul);
+            i++;
+        }
+       }
+        
+    </script>
+</head>
+<body onload="bodyLoad()">
+     <div>
+        <ol id="ol">
+              
+        </ol>
+     </div>
+</body>
+</html>

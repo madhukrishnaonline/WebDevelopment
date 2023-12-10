@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ColourChange</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        function ChangeColour(obj)
+        {
+           var color = document.getElementById("text");
+
+           switch(obj.id)
+           {
+             case "green":
+               color.className = "text-success mt-4";
+               break;
+            case "red":
+                color.className = "text-danger mt-4";
+                break;
+            case "blue":
+                color.className = "text-info mt-4";
+                break;
+            case "yellow":
+                color.className = "text-warning mt-4";
+                break;
+           }
+        }
+    </script>
+</head>
+<body>
+    <div class="container-fluid mt-5">
+        <h2 class="btn btn-success" id="green" value="green" onclick="ChangeColour(this)">Green</h2>
+        <h2 class="btn btn-info" id="blue" value="blue" onclick="ChangeColour(this)">Blue</h2>
+        <h2 class="btn btn-warning" id="yellow" value="yellow" onclick="ChangeColour(this)">Yellow</h2>
+        <h2 class="btn btn-danger"  id="red" value="red" onclick="ChangeColour(this)">Red</h2>
+        <div class="mt-4">
+             <h1 id="text">This text can changes Color</h1>
+        </div>
+    </div>
+</body>
+</html>

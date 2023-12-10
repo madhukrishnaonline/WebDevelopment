@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        function display(basic,preview,description)
+        {
+            document.getElementById("details").style.display=basic;
+            document.getElementById("view").style.display=preview;
+            document.getElementById("descp").style.display=description;
+        }
+        function fun()
+        {
+            var select = document.getElementById("select").value;
+            var basic = document.getElementById("basic").value;
+            var preview = document.getElementById("preview").value;
+            var description = document.getElementById("description").value;
+            switch(select)
+            {
+                case basic:
+                    display("block","none","none");
+                    break;
+                case preview:
+                    display("none","block","none");
+                    break;
+                case description:
+                    display("none","none","block");
+                    break;
+                default:
+                    document.getElementById("select");
+                    break;
+            }
+        }
+    </script>
+</head>
+<body class="container-fluid">
+    <div class="w-50 mt-5">
+        <h1>Product Details</h1>
+        <select class="form-select" id="select" onchange="fun()">
+            <option>select Any one</option>
+            <option id="basic" value="BasicDetails">Basic Details</option>
+            <option id="preview" value="Preview">Preview</option>
+            <option id="description" value="Description">Description</option>
+        </select> 
+    </div>
+    <div class="mt-5">
+        <div style="display:none;" id="details">
+            <dl>
+                <dt>Name:</dt>
+                <dd>Farbot T-shirt</dd>
+                <dt>Price</dt>
+                <dd>&#8377; 599</dd>
+             </dl>
+        </div>
+         <div style="display:none;" id="view">
+             <label class="form-label text-uppercase">Priview</label><br>
+            <img src="../public/assets/Farbot-Tshirt.jpg" alt="farbot" width="300px" height="300px" >
+         </div>
+         <div style="display:none;" id="descp">
+            <label class="form-label text-uppercase">Description</label>
+            <p>Farbot T-Shirt for Casuals, Functions,Styles & Parties</p>
+         </div>
+    </div>
+
+</body>
+</html>

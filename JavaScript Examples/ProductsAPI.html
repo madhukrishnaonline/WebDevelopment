@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Producst API</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+
+    <script>
+        // Fake Store API
+         function FetchFakeStoreAPI()
+         {
+             fetch("http://fakestoreapi.com/products")
+             .then(function(response)
+             {
+                return response.json();
+             })
+             .then(function(product)
+             {
+                for(var items of product)
+                {
+                    var card = document.createElement("div");
+
+                    card.className = "card m-2 p-2";
+                    card.innerHTML = `
+                        <div class="card-header"> 
+                          <h2 class="card-title">${items.title}</h2>
+                        </div>
+                        <div class="card-body text-center"> 
+                           <img src="${items.image}" height="200px"></img>
+                        </div>
+                        <div class="card-footer"> 
+                          <h3 class="card-title">&#8377; ${items.price}</h3>
+                        </div> 
+                    `;
+                  document.getElementById("fakeStore").appendChild(card);
+                }
+             })
+         }
+        //Nasa API
+        function FetchNasaAPI()
+        {
+            fetch("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=DEMO_KEY")
+            .then(function(response)
+            {
+                return response.json();
+            })
+            .then(function(data)
+            {
+                 for(var mars of data.photos)
+                 {
+                    var card2 = document.createElement("div");
+
+                    card2.className = "card m-2 p-2";
+                    card2.innerHTML = `
+                        <div class="card-header"> 
+                          <h2 class="card-title text-center">Mars Id: ${mars.id}</h2>
+                        </div>
+                        <div class="card-body text-center"> 
+                           <a href="${mars.img_src}" target="_blank">
+                            <img src="${mars.img_src}" height="200px"></img> 
+                           </a>
+                        </div>
+                        <div class="card-footer"> 
+                          <h3 class="text-wrap">Cam: ${mars.camera.full_name}</h3>
+                          <h3>Rover: ${mars.rover.name}</h3>
+                          <h3>Launch: ${mars.rover.launch_date}</h3>
+                          <h3>Landing: ${mars.rover.landing_date}</h3>
+                        </div> 
+                    `;
+                    document.getElementById("nasa").appendChild(card2);
+                 }
+            })
+        }
+    </script>
+</head>
+<body class="container-fluid">
+    <div class="mt-3">
+        <button class="btn btn-primary" onclick="FetchFakeStoreAPI()">FakeStroeAPI</button>
+    </div>
+     <div class="d-flex flex-wrap mt-3" id="fakeStore">
+         
+     </div>
+     <div class="mt-3">
+        <button class="btn btn-warning" onclick="FetchNasaAPI()">NasaAPI</button>
+     </div>
+     <div class="d-flex flex-wrap mt-3" id="nasa">
+         
+     </div>
+</body>
+</html>

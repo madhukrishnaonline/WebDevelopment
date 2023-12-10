@@ -1,0 +1,24 @@
+    <script>
+        function GetCookieStatus()
+        {
+           var cookies = navigator.cookieEnabled;
+           if(cookies==true)
+           {
+              document.write("Cookies Enabled <br>");
+           }
+           else
+           {
+             document.write("Cookies are disabled make sure cookies are enabled...<br>");
+           }
+            var plug = navigator.plugins;
+            for(var item of plug)
+            {
+                var name = document.write(item.name+"<br>");
+            }
+           var mimes = navigator.mimeTypes;
+           for(var item of mimes){
+              document.write(item.type+"<br>");
+           }
+        }
+        GetCookieStatus();
+    </script>

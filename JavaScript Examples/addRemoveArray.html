@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cities</title>
+     <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+     <script>
+        var cities = ["Hyd","Chennai","mumbai"];
+        function citiesLoad()
+        {
+            var lstCities = document.getElementById("selectCities");
+            lstCities.innerHTML="";
+            for(var property of cities)
+            {
+              var opt = document.createElement("option");
+              opt.innerHTML=property;
+              lstCities.appendChild(opt);
+            }
+        }
+        function bodyLoad()
+        {
+            citiesLoad();              
+        }
+        function AddCities()
+        {
+           var addCity = document.getElementById("addCity");
+           cities.push(addCity.value);
+           citiesLoad();
+           alert(`${addCity.value} city Added successfully...`);
+           addCity.value="";
+           addCity.focus();
+        }
+        function removeCity()
+        {
+            var selectedCity = document.getElementById("selectCities").value;
+            var cityIndex = cities.indexOf(selectedCity);
+            var status = confirm(`Are you sure you want to remove this city? ${selectedCity}`);
+            if(status==true)
+            {
+                cities.splice(cityIndex, 1);
+                alert(`City ${selectedCity} removed Successfully....`);
+                citiesLoad();
+            }
+        }
+        function sortCity()
+        {
+            var sortCity = cities.sort();
+            citiesLoad();
+        }
+     </script>
+</head>
+<body onload="bodyLoad()" class="container">
+    <h2>Shipping To</h2>
+    <div class="mt-3 w-25">
+        <label class="form-label">Add Your City</label>
+        <div class="input-group">
+            <input type="text" id="addCity" class="form-control">
+            <button class="btn btn-primary" onclick="AddCities()" >Add City</button>
+        </div>
+    </div>
+    <div class="mt-3 w-25">
+        <h2>Cities List</h2>
+        <div class="d-grid">
+           <select id="selectCities" class="form-select" size="3">
+
+           </select>
+            <div class="btn-group mt-2">
+                <button class="btn btn-danger" onclick="removeCity()"><span class="bi bi-trash"></span> Remove City</button>
+                <button class="btn btn-success" onclick="sortCity()"><span class="bi bi-sort-down"></span> Sort</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

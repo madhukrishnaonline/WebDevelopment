@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal EMI Calculator</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <style type="text/css">
+       
+    </style>
+
+    <script>
+       function changeAmount()
+       {
+         document.getElementById("txtAmt").value=document.getElementById("getAmt").value;
+       } 
+       function changeYear()
+       {
+        document.getElementById("txtYear").value=document.getElementById("rangeYear").value;
+       }
+       function changeInterset()
+       {
+         document.getElementById("txtInterest").value=document.getElementById("getInterest").value;
+       }
+       function calculateInterest()
+       {
+        var p,t,i,sum;
+
+        p = document.getElementById("txtAmt").value;
+        t = document.getElementById("txtYear").value;
+        i = document.getElementById("txtInterest").value;
+        sum = p*t*i/100;
+        
+        var total = document.getElementById("total");
+        total.innerHTML = `Total Amount you need to pay ${sum}`;
+       }
+    </script>
+</head>
+<body class="container-fluid">
+    <div class="card">
+        <div class="card-header">
+           <div class="mb-3">
+             <a href="#">Personal</a>&lt;
+             <a href="#">Tools and Calculators</a>&lt;
+             <span>Home Loan Calculator</span>
+           </div>
+          <h1 class="">Home Loan Calculator - Calculate EMI For Housing Loan</h1>
+          <h6 for="">Plan borrowings to buy your dream home by calculating the monthly instalment outgo and eligibility on your home loan</h6>
+        </div>
+        <div class="card-body">
+           <div class="row">
+             <div class="col-1">
+
+             </div>
+             <div class="col-3" id="principle" >
+                <!--<label class="form-label input-group-text" style="font-size: 8px;">Amount You Need </label> &nbsp;-->
+                <div class="input-group w-25" id="setAmt">  
+                    <span class="input-group-text bi bi-currency-rupee"></span>
+                    <input type="text" size="3" value="1000" id="txtAmt" class="form-control" >
+                </div>
+                <div class="w-25">
+                    <input type="range" min="1000" max="10000" value="1000" id="getAmt" class="form-range " onchange="changeAmount()">
+                    <div class="d-flex justify-content-between">
+                        <label class="">&#8377; 1000</label>
+                        <label class="">&#8377; 10000</label>
+                    </div>
+                </div>
+             </div>
+             <div class="col-5" id="time">
+                <div class="input-group w-25">
+                    <span>for</span>&nbsp;&nbsp;
+                    <div>
+                       <input type="text" value="1" class="form-control" id="txtYear" size="3">
+                    </div>
+                    <span>Years</span>
+                </div>
+                 <div class="w-25">
+                     <input type="range" min="1" max="5" value="1" id="rangeYear" class="form-range" onchange="changeYear()">
+                     <div class="d-flex justify-content-between">
+                        <label class="">1 Year</label>
+                        <label class="">5 Year</label>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-3" id="interest">
+                <div class="input-group w-25">
+                    <div>Interest</div> &nbsp;&nbsp;
+                    <div>
+                        <input type="text" size="3" value="10.5" id="txtInterest" class="form-control">
+                    </div>&nbsp;
+                    <span class="bi bi-percent"></span>
+                </div>
+                <div class="w-25">
+                    <input type="range" min="10.5" max="21.0" value="10.5" id="getInterest" class="form-range" onchange="changeInterset()" description="Interest Rate">
+                    <div class="d-flex justify-content-between">
+                        <label>10%</label>
+                        <label>20%</label>
+                    </div>
+                </div>
+             </div>
+             
+             <div class="">
+
+             </div>
+           </div>
+           <div class="row mt-4">
+              <div class="col-4">
+                 
+              </div>
+              <div class="col-4">
+                 
+              </div>
+              <div class="col-4">
+                <div class="">
+                    <button class="btn btn-outline-primary me-5" onclick="calculateInterest()">Calculate</button>
+                    <div>
+                        <output id="total"></output>
+                    </div>
+                </div>
+              </div>
+           </div>
+        </div>
+        <div class="card-footer">
+           <div class="dropdown">
+              <div class="btn-group">
+                 <button class="btn btn-secondary">Disclaimer</button>
+                 <button class="dropdown-toggle dropdown-toggle-split btn btn-secondary" data-bs-toggle="dropdown"></button>
+              <div class="dropdown-menu">
+                <p class="dropdown-item-text">The indicated rate/ EMI are applicable for loans under the Adjustable Rate Home Loan Scheme, and subject to change at the time of disbursement. The rates are linked to HDFC Ltd.'s Bench Mark Rate and are variable through the tenor of the loan. All loans are from and at the sole discretion of HDFC Ltd. For detailed terms and conditions visit <a href="www.hdfc.com.">www.hdfc.com</a>CINL70100MH1977PLCO19916</p>
+              </div>
+             </div>
+           </div>
+        </div>
+    </div>
+
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>

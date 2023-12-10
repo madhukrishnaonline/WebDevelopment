@@ -1,0 +1,65 @@
+<link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+<script>
+    class Product
+    {
+        Name;
+        Price;
+        Quantity;
+        Total()
+        {
+           return this.Quantity*this.Price;
+        }
+        Print()
+        {
+            document.write(`Name: ${this.Name}<br>Price:${this.Price}<br>Quantity: ${this.Quantity}<br>Total: ${this.Total()}`);
+        }
+    }
+    var obj = new Product;
+    obj.Name="Android TV";
+    obj.Price = 60000.00;
+    obj.Quantity =2;
+    obj.Total();
+    obj.Print();
+    var userName = window.prompt('Enter your name');
+    var password = window.prompt('Enter your password'); 
+    var product = window.prompt('Enter your product');
+    class Authentication
+    {
+        _productName;
+        get ProductName()
+        {
+            return this._productName;
+        }
+        set ProductName(newName)
+        {
+           if(userName =="madhu143" && password =="mk123")
+           {
+              this._productName = newName;
+           }
+           else{
+            document.write("error: invalid username");
+           }
+        }
+    }
+    let user = new Authentication;
+    user.ProductName = product;
+    if(user.ProductName)
+    {
+        document.write(`Product Name=${user.productName}`);
+    }
+    class DataBase
+    {
+      insert;
+      delete;
+
+      constructor()
+      {
+        document.write("Connected to DataBase<br>");
+      }
+    }
+    let db = new DataBase;
+</script>
+<body class="container-fluid">
+    <button class="btn btn-warning" onclick="insertClicked()">Insert</button>
+    <button class="btn btn-danger" onclick="deleteClicked()">Delete</button>
+</body>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Images SLide</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        var images = [
+            {Name:"Madhu Krishna",Photo:"../public/assets/B T-shirt.jpg"},
+            {Name:"Madhu Krishna",Photo:"../public/assets/Attention.jpg"},
+            {Name:"Madhu Krishna",Photo:"../public/assets/BadBoy.jpeg"},
+            {Name:"Madhu Krishna",Photo:"../public/assets/Attitude.jpg"},
+            {Name:"Madhu Krishna",Photo:"../public/assets/fav.jpg"},
+            {Name:"Madhu Krishna",Photo:"../public/assets/Bycycle.jpg"},
+            {Name:"Madhu Krishna",Photo:"../public/assets/BlueWhite.jpg"},
+        ]
+        function GetImage(index)
+        {
+            document.getElementById('lblName').innerHTML = images[index].Name;
+            document.getElementById("img").src = images[index].Photo;
+        }
+        function LoadImages()
+        {
+            GetImage(0);
+        }
+        var count=0;
+        function SlideShow()
+        {
+           count++;
+           GetImage(count);
+        }
+        function Play()
+        {
+           slide =  setInterval(SlideShow,2000);
+           document.getElementById('status').innerHTML = 'Status- Slide Started';
+        }
+        function Pause()
+        {
+            clearInterval(slide);
+            document.getElementById('status').innerHTML = 'Status- Slide Stopped';
+        }
+    </script>
+</head>
+<body class="container-fluid" onload="LoadImages()">
+    <div class="card mt-5">
+        <div class="card-header text-center">
+             <h3 id="lblName" class="card-title"></h3>
+             <span id="status"></span>
+        </div>
+        <div class="card-body text-center">
+             <img width="50%" height="600px" id="img">
+        </div>
+        <div class="card-footer text-center">
+             <button class="btn btn-success" onclick="Play()">
+                <span class="bi bi-play-btn-fill"></span>
+             </button>
+             <button class="btn btn-danger" onclick="Pause()">
+                <span class="bi bi-pause-btn-fill"></span>
+             </button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<script>
+    "use strict";
+    function value()
+    {
+        x = 10;
+        document.writeln("x :"+x+"<br>");
+        var x; //Hoisting
+    if(x==10)
+    {
+        var x =20;
+        var x=30; //shadowing
+        document.writeln("x :"+x+"<br>");
+    }
+    }
+    value();
+</script>
+<script>
+    "use strict";
+    function value2()
+    {
+        let x ;
+        x = 50;
+        document.writeln("x :"+x+"<br>");
+        if(x==50)
+        {
+            let y =70;
+            y=60;
+            document.writeln("y :"+y+"<br>");
+        }
+       //document.writeln("y :"+y+"<br>");        error
+    }
+    value2();
+</script>
+<script>
+    "use strict";
+    function value3()
+    {
+       const z = 90;
+       document.writeln("z :"+z+"<br>");
+    }
+    value3();
+</script>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validate</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+
+    <style>
+       #name{
+        border-top: none;
+        border-left: none;
+        border-right: none;
+       }
+    </style>
+    <script>
+         var User = [
+            {UserName:'john123'},
+            {UserName:"john"},
+            {UserName:"david"},
+            {UserName:"madhu"},
+            {UserName:"krishna"},
+            {UserName:"madhukrishnaonline"},
+            {UserName:"lokeshan"},
+            {UserName:"nareshan"}
+        ];
+        function ValidUserName()
+        {
+           var name = document.getElementById("name").value;
+           var warn = document.getElementById("warning");
+
+           for(var usernames of User)
+           {
+              if(usernames.UserName==name)
+              {
+                warn.innerHTML = "User Name Taken --try another";
+                warn.className = "text-danger mt-1";
+                break;
+              }
+              else if(usernames.UserName!=name)
+              {
+                warn.innerHTML = "User Name Available";
+                warn.className = "text-success mt-1";
+              }
+              else
+              {
+                warn.innerHTML = " ";
+              }
+           }
+        }
+        function VerifyCaps(e)
+        {
+           var password = document.getElementById("pswrd");
+           var warning = document.getElementById("warn");
+ 
+           if(e.keyCode>=65 && e.keyCode<=90)
+           {
+             warning.style.display="block";
+             password.title = "Caps On";
+           }
+           else
+           {
+            warning.style.display="none";
+           }
+        }
+    </script>
+</head>
+<body class="container-fluid">
+    <div class="d-flex justify-content-center align-items-center mt-5">
+        <div class="w-25 border rounded rounded-5 p-5 shadow">
+            <form>
+                <div class="mb-3">
+                    <div class="form-floating">
+                        <input type="text" required onkeyup="ValidUserName()" placeholder="username" name="username" class="form-control" id="name">
+                        <label>UserName</label>
+                        <span id="warning" class="mt-1"></span>
+                    </div>
+                </div>
+                <div>
+                    <div class="form-floating">
+                        <input type="password" required onkeypress="VerifyCaps(event)" placeholder="password" name="password" class="form-control" id="pswrd">
+                        <label for="">Password</label>
+                        <div class="text-warning mt-2" id="warn" style="display: none;">
+                             <span class="bi bi-exclamation-triangle" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Warning:Caps On"></span>
+                        </div>
+                    </div>
+                </div>
+                 <div class="mt-3">
+                    <button class="btn btn-outline-success">Submit</button>
+                 </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js">
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>

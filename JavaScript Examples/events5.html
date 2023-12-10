@@ -1,0 +1,18 @@
+<script>
+  function HidePrice() {
+    var price = document.getElementById("price");
+    price.style.display = "none";
+    //document.querySelector("img").style.display = "block";
+  }
+  function ShowPrice() {
+     price.style.display = "block";
+     //document.querySelector("img").style.display = "none";
+  }
+</script>
+<body oncontextmenu="return false">
+    <div>
+        <h4 onselect="return false" onselectstart="return false">Press Hold Down Mouse Button to view Price..</h4>
+        <img src="../public/assets/SportsShoe.jpg" title="double click to view image" ondblclick="window.open('../public/assets/SportsShoe.jpg')" onmousedown="ShowPrice()" onmouseup="HidePrice()" alt=""> 
+        <span id="price" style="display: none;">Today Offer Prize is ...&#8377; 799</span>
+    </div>
+</body>

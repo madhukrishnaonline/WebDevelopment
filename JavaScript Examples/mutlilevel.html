@@ -1,0 +1,32 @@
+<script>
+    class HDFC_Bank_Transaction
+    {
+        WithDraw = "WithDraw Money";
+        Deposit = "Deposit Money";
+        Transfer = "Transfer money";
+        Print()
+        {
+            document.write(`WithDraw:${this.WithDraw}<br>Deposit${this.Deposit}<br>Transfer:${this.Transfer}<br>`);
+        }
+    }
+    class HDFC_Bank_Loan extends HDFC_Bank_Transaction
+    {
+       Loans = "Loans Offers";
+       Print()
+       {
+        super.Print();
+        document.write(`Loans:${this.Loans}<br>`);
+       }
+    }
+    class HDFC_Bank_CreditCards extends HDFC_Bank_Loan
+    {
+        CreditCard = "Credit Card";
+        Print()
+        {
+            super.Print();
+            document.write(`Credit Card:${this.CreditCard}`);
+        }
+    }
+    let bank = new HDFC_Bank_CreditCards;
+    bank.Print();
+</script>

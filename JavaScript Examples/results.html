@@ -1,0 +1,21 @@
+<script>
+     var searchString = location.search;
+     var query = searchString.substring(searchString.indexOf("=")+1);
+
+     var data = 
+     [
+        {
+            Topic:"JavaScript",Description:"JavaScript is a Client side Scripting Language"
+        },
+        {
+            Topic:"JQuery",Description:"JQuery is a Simple JavaScript Library"
+        }
+     ];
+     for(var item of data)
+     {
+       if(item.Topic==query)
+       {
+         document.write(item.Description);
+       }
+     }
+</script>

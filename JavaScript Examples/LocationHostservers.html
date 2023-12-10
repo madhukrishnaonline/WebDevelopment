@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Location Services</title>
+        <script>
+             function LoadLocationDetails() 
+             {
+                document.getElementById("server").innerHTML = location.host;
+                document.getElementById("port").innerHTML = location.port;
+                document.getElementById("protocol").innerHTML = location.protocol;
+                document.getElementById("url").innerHTML = location.href;
+                document.getElementById("path").innerHTML = location.pathname;
+                if(location.protocol=="http")
+                {
+                    document.getElementById("msg").innerHTML = "You're accessing from web";
+                }
+                else{
+                    document.getElementById("msg").innerHTML = "You're accessing from file";
+                }
+             }
+        </script>
+    </head>
+    <body onload="LoadLocationDetails()">
+        <div>
+            <dl>
+                <dt>Server</dt>
+                <dd id="server"></dd>
+                <dt>Port</dt>
+                <dd id="port"></dd>
+                <dt>Protocol</dt>
+                <dd id="protocol"></dd>
+                <p id="msg"></p>
+                <dt>URL</dt>
+                <dd id="url"></dd>
+                <dt>Path</dt>
+                <dd id="path"></dd>
+            </dl>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+      function ShowMessage()
+      {
+         document.getElementById("msg").style.display="block";
+        
+      }
+      function HideMessage()
+      {
+        document.getElementById("msg").style.display="none";
+        var txtName = document.getElementById("username").value;
+        document.getElementById("username").value = txtName.toUpperCase();
+        document.getElementById("email").focus();
+      }
+      function PostData()
+      {
+        var data = {
+            UserName:document.getElementById("userName").value,
+            Password:document.getElementById("password").value,
+            Email: document.getElementById("email").value,
+            City:document.getElementById("lstCities").value
+        };
+        console.log(JSON.stringify(data));
+        document.write("form submitted...")
+      }
+      function FormReset()
+      {
+        alert("Form will be reset........");
+      }
+      function ChangeCity()
+      {
+        document.getElementById("frmRegister").submit();
+       PostData();
+      }
+    </script>
+</head>
+<body class="container-fluid">
+    <form class="mt-5" onsubmit="PostData()" onreset="FormReset()" id="frmRegister">
+        <div class="form-floating mb-3">
+            <input type="text" onfocus="ShowMessage()" onblur="HideMessage()" class="form-control" name="username" id="username" placeholder="UserName">
+            <label for="">UserName</label>
+            <span id="msg" style="display: none;" class="bi bi-exclamation-triangle text-warning"> Name in Block Letters Only.....</span>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" name="password" id="password" placeholder="Password">
+            <label for="">password</label>
+        </div>
+        <div class="form-floating">
+            <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+            <label for="">Email</label>
+        </div>
+        <div>
+            <select class="form-select mt-3" id="lstCities" name="city" onchange="ChangeCity()">
+                <option value="HYD">HYD</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Chennai">Chennai</option>
+            </select>
+        </div>
+        <div class="mt-3">
+            <button class="btn btn-outline-primary">Register</button>
+            <button class="btn btn-outline-danger">Reset</button>
+        </div>
+    </form>
+</body>
+</html>

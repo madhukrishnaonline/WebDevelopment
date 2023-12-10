@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Type Functions</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        function GetTime()
+        {
+            var now = new Date();
+            document.getElementById("time").innerHTML = now.toLocaleTimeString();
+            var hrs = now.getHours();
+            var salutation = document.getElementById("salutation");
+            var rise = document.getElementById("rise");
+            if(hrs>=0 && hrs<12)
+            {
+               salutation.innerHTML=`Hi! Good Morning`;
+               rise.className = "bi bi-sunrise-fill"
+            }
+            else if(hrs>=12 && hrs<16)
+            {
+                salutation.innerHTML=`Hi! Good Afternoon`;
+                rise.className = "bi bi-sun-fill";
+            }
+            else
+            {
+                salutation.innerHTML=`Hi! Good Evening`;
+                rise.className = "bi bi-sunset-fill";
+            }
+        }
+        function bodyLoad()
+        {
+           var now = new Date();
+           var date = document.getElementById("date");
+           var day =now.getDay();
+           var dt = now.getDate();
+           var month = now.getMonth();
+           var year = now.getFullYear();
+           
+           var days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+           var months = ["Jan", "Feb", "Mar", "Apr", "May","jun", "Jul", "Aug", "Sep", "Oct", "nov", "dec"];
+
+           date.innerHTML= `${days[day]} ${dt} ${months[month]} ${year}`;
+           setInterval(GetTime,1000);
+        }
+    </script>
+</head>
+<body class="container-fluid" onload="bodyLoad()">
+    <div class="btn-toolbar bg-dark text-white mt-3 p-2 justify-content-between">
+         <div class="btn-group">
+            <span><span class="bi bi-cart4"></span> Amazon Shopping</span>
+         </div>
+         <div class="btn-group">
+            <span class="" id="rise"></span> &nbsp;
+            <span id="salutation"></span>
+         </div>
+         <div class="btn-group">
+            <span id="date"></span> &nbsp; | &nbsp;
+            <span class="bi bi-alarm"></span> &nbsp;
+            <span id="time"></span>
+         </div>
+    </div>
+</body>
+</html>
