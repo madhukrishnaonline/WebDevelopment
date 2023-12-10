@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="/node_modules/bootstrap-icons/font/bootstrap-icons.css">
+        <title>transitions</title>
+        <style>
+           div{
+               background-color: red;
+               transition: 1s;
+               width: 300px;
+               height: 100px;
+           }
+           div:hover{
+            width: 700px;
+            border: 2px solid gray;
+            border-radius: 50px;
+            background-color: yellow;
+           /* transition-duration: 4s;
+            transition-delay: 2s;*/
+            transition-property: width;
+            /*transition-timing-function: ease-in;*/
+            transition-timing-function: steps(5);
+           }
+          /* div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+           }*/
+        </style>
+    </head>
+    <body class="container-fluid">
+         <div>
+         </div>
+        <link rel="stylesheet" href="/node_modules/jquery/dist/jquery.js">
+        <link rel="stylesheet" href="/node_modules/bootstrap/dist/js/bootstrap.bundle.js">
+    </body>
+</html>

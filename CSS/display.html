@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+          .box{
+            border: 2px solid rgb(234, 7, 7);
+            width: 50px;
+            height: 50px;
+            margin: 10px;
+            padding: 5px;
+          }
+          .container{
+            display: flex;
+            flex-wrap: wrap;
+            /*flex-wrap: nowrap;
+            flex-direction: column;
+            flex-direction: column-reverse;
+            flex-direction: row-reverse;*/
+            flex-direction: row;
+          }
+          .box2{
+            border: 2px solid rgb(41, 246, 5);
+            width: 50px;
+            height: 50px;
+            margin: 10px;
+            padding: 5px;
+          }
+          #container-2{
+            display: grid;
+            grid-template-columns: 100px 100px;
+          }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="box">Box-1</div>
+            <div class="box">Box-2</div>
+            <div class="box">Box-3</div>
+            <div class="box">Box-4</div>
+            <div class="box">Box-5</div>
+            <div class="box">Box-6</div>
+            <div class="box">Box-7</div>
+            <div class="box">Box-8</div>
+            <div class="box">Box-9</div>
+        </div>
+        <div id="container-2">
+            <div class="box2">Box-1</div>
+            <div class="box2">Box-2</div>
+            <div class="box2">Box-3</div>
+            <div class="box2">Box-4</div>
+            <div class="box2">Box-5</div>
+            <div class="box2">Box-6</div>
+            <div class="box2">Box-7</div>
+            <div class="box2">Box-8</div>
+            <div class="box2">Box-8</div>
+            <div class="box2">Box-9</div>
+        </div>
+    </body>
+</html>

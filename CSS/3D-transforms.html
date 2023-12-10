@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 700px;
+            }
+            img{
+               /* transform: scale3d(1,1,1);*/
+               transform: rotate3d(0,0,0,0deg);
+                transition: 3s;
+            }
+            img:hover{
+               /* transform: scale3D(2,1.8,3);*/
+               transform: rotate3d(3,3,2,180deg);
+                transition: 4s;
+                box-shadow: 3px 3px 2px solid black;
+                opacity: 1;
+            }
+            .figure{
+                width: 300px;
+                height: 400px;
+                background-image: url(../assets/Swagger.jpg);
+                border: 1px solid black;
+                opacity: 0.3;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <img class="figure" src="../assets/Swagger.jpg" alt="">
+        </div>
+    </body>
+</html>
