@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <head>
+        
+    </head>
+    <body class="container">
+        <h1>Product Details</h1>
+          <div>
+            <div class="nav nav-pills mt-3">
+                <button data-bs-toggle="tab" data-bs-target="#basic" class="nav-item nav-link active shadow">Basic Details</button>  
+                <button data-bs-toggle="tab" data-bs-target="#preview" class="nav-item nav-link shadow">Preview</button>
+                <button data-bs-toggle="tab" data-bs-target="#desc" class="nav-item nav-link shadow ">Description</button>
+             </div>
+            <div class="mt-2 tab-content">
+                <div class="tab-pane fade show active" id="Basic">
+                    <h3>Basic Details</h3>
+                    <dl>
+                        <dt>Name</dt>
+                        <dd>Farbot T-Shirt</dd>
+                        <dt>Price</dt>
+                        <dd>&#8377; 3999</dd>
+                    </dl>
+                </div>
+                <div class="tab-pane fade" id="preview">
+                    <h3>Product Preview</h3>
+                    <dd>
+                        <img src="./assets/Farbot-Tshirt.jpg" alt="fig.1" description="Farbot T-shirt">
+                        <p>Farbot T-Shirt</p>
+                    </dd>
+                </div>
+                <div class="tab-pane fade" id="desc">
+                   <h3>Description</h3>
+                    <dd>
+                        <p>T-shirt for Boys</p>
+                        <p>Stylish</p>
+                        <p>for Party..</p>
+                    </dd>
+                </div>
+            </div>
+          </div>
+          
+        <script src="../node_modules/jquery/dist/jquery.js"></script>
+        <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    </body>
+</html>

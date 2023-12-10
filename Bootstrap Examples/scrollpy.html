@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">    
+      <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    </head>
+    <body>
+       <div class="container-fluid">
+          <div class="row">
+            <div id="topics" class="col-3 list-group  mt-5">
+                <h3><a class="list-group-item list-group-action text-decoration-none p-2" style="text-align: center;" href="#html">HTML</a></h3>
+                <h3><a class="list-group-item list-group-action text-decoration-none p-2" style="text-align: center;" href="#css">CSS</a></h3>
+                <h3><a class="list-group-item list-group-action text-decoration-none p-2" style="text-align: center;" href="#js">JavaScript</a></h3>
+            </div>
+            <div class="col-9">
+                <div data-bs-spy="scroll" data-bs-target="#topics" data-bs-offset="0" tabindex="0" class="overflow-scroll" style="height:700px">
+                <h1 id="html">HTML</h1>
+                <p>Angular Forms
+                 - Angular Forms are classified into 2 types
+                         a) Template Driven Forms
+                         b) Model Driven Forms or Reactive Forms
+                 
+                 <p>Template Driven Form
+                    - Forms are configured and handled at View level. [ in UI ]
+                    - It uses MVVM [Model-View  View-Model].
+                    - The library required for template driven form is defined in "FormsModule" of "@angular/forms".
+                    - The element is defined by using "ngForm".
+                    - The other input and form elements are defined by using "ngModel".
+                            frmRegister.value            object { key : value }
+                                                            Element Name is Key
+                                                            Element Value is its value</p>
+                 - It reduces the number of requests.
+                 - It improves the load time.
+                 - Separation, Reusability and Extensibility issues.
+                 - UI is heavy and slow in rendering.
+                 
+                 <p>Note: Always use tempalte forms when you want a form with stable functionality and doesn't require regular extentions.
+                 
+                    Ex:
+                     template-form.component.ts
+                    
+                     import { Component } from '@angular/core';
+                    
+                    @Component({
+                      selector: 'app-template-form',</p>
+                   templateUrl: './template-form.component.html',
+                   styleUrls: ['./template-form.component.css']
+                 })
+                 export class TemplateFormComponent {
+                     public SubmitClick(data:any){
+                         alert(JSON.stringify(data));
+                     }
+                 }
+                 Note: Always use tempalte forms when you want a form with stable functionality and doesn't require regular extentions.
+                 
+                 Ex:
+                  template-form.component.ts
+                 
+                  import { Component } from '@angular/core';
+                 
+                 @Component({
+                   selector: 'app-template-form',
+                   Template Driven Form
+                 - Forms are configured and handled at View level. [ in UI ]
+                 - It uses MVVM [Model-View  View-Model].
+                 - The library required for template driven form is defined in "FormsModule" of "@angular/forms".
+                 - The element is defined by using "ngForm".
+                 - The other input and form elements are defined by using "ngModel".
+                         frmRegister.value            object { key : value }
+                                                         Element Name is Key
+                                                         Element Value is its value
+                  
+                
+                         frmRegister.value                             { }
+                         frmRegister.value.UserName            only user name " "
+                        
+                 - You can directly access any specific element value
+                 
+                          UserName.value
+                          Age.value
+                 
+                                     Validating Template Driven Form
+                 - Validation is the process of verifying user input.
+                 - Validation is required to ensure that contradicationary and unauthorized data is not get stored into database.
+                 - Validations can be handled
+                         a) Client Side
+                         b) Server Side
+                 - Client Side validations in JavaScript and jQuery are handled by using lot of functions. [string functions, math functions, array function etc..]
+                 - Angular is provided with "Validation Services".
+                 - These validation service can use HTML validations and verify values without writing much logic.
+                 - HTML validations are
+                         required
+                         minlength
+                         maxlength
+                         pattern
+                         min
+                         max
+                         number
+                         email
+                         url
+                 - Validation service is buit-in with validation functions.
+                 - The validation properties of Angular validation service are classified into 2 groups
+                                 a) Form State Validation
+                                 b) Input State Validation
+                 
+                 - Form State validation services are used to verify all fields in a form.
+                 - You can access from "ngForm" reference
+                 
+                 ServiceName        Property            Type         Description
+                 -------------------------------------------------------------------------------------
+                 NgPristine            pristine               boolean     It returns true if no field
+                                                                          in the form is modified.
+                 
+                 NgDirty                dirty                boolean     It returns true if any one
+                                                                          field in the form is                                                                  modified.
+                 
+                 NgValid                valid                boolean    It returns true when all                                                            fields in the form are valid.
+                 
+                 NgInvalid            invalid            boolean    It returns true when any
+                                                                         one field in invalid.
+                 
+                 NgSubmitted        submitted      
+                 Input State Validation Services
+                 - It verifies every field in the form inidividually and reports the error.
+                 - The input state validation servies are
+                 
+                 NgPristing            pristine
+                 NgDirty                dirty
+                 NgValid                valid
+                 NgInvalid            invalid
+                 NgTouched            touched
+                 NgUnTouched        untouched
+                 NgErrors<p>Angular Forms
+                    - Angular Forms are classified into 2 types
+                            a) Template Driven Forms
+                            b) Model Driven Forms or Reactive Forms
+                    
+                    <p>Template Driven Form
+                       - Forms are configured and handled at View level. [ in UI ]
+                       - It uses MVVM [Model-View  View-Model].
+                       - The library required for template driven form is defined in "FormsModule" of "@angular/forms".
+                       - The element is defined by using "ngForm".
+                       - The other input and form elements are defined by using "ngModel".
+                               frmRegister.value            object { key : value }
+                                                               Element Name is Key
+                                                               Element Value is its value</p>
+                    - It reduces the number of requests.
+                    - It improves the load time.
+                    - Separation, Reusability and Extensibility issues.
+                    - UI is heavy and slow in rendering.
+                    
+                    <p>Note: Always use tempalte forms when you want a form with stable functionality and doesn't require regular extentions.
+                    
+                       Ex:
+                        template-form.component.ts
+                       
+                        import { Component } from '@angular/core';
+                       
+                       @Component({
+                         selector: 'app-template-form',</p>
+                      templateUrl: './template-form.component.html',
+                      styleUrls: ['./template-form.component.css']
+                    })
+                    export class TemplateFormComponent {
+                        public SubmitClick(data:any){
+                            alert(JSON.stringify(data));
+                        }
+                    }
+                    Note: Always use tempalte forms when you want a form with stable functionality and doesn't require regular extentions.
+                    
+                    Ex:
+                     template-form.component.ts
+                    
+                     import { Component } from '@angular/core';
+                    
+                    @Component({
+                      selector: 'app-template-form',
+                      Template Driven Form
+                    - Forms are configured and handled at View level. [ in UI ]
+                    - It uses MVVM [Model-View  View-Model].
+                    - The library required for template driven form is defined in "FormsModule" of "@angular/forms".
+                    - The element is defined by using "ngForm".
+                    - The other input and form elements are defined by using "ngModel".
+                            frmRegister.value            object { key : value }
+                                                            Element Name is Key
+                                                            Element Value is its value
+                     
+                   
+                            frmRegister.value                             { }
+                            frmRegister.value.UserName            only user name " "
+                           
+                    - You can directly access any specific element value
+                    
+                             UserName.value
+                             Age.value
+                    
+                                        Validating Template Driven Form
+                    - Validation is the process of verifying user input.
+                    - Validation is required to ensure that contradicationary and unauthorized data is not get stored into database.
+                    - Validations can be handled
+                            a) Client Side
+                            b) Server Side
+                    - Client Side validations in JavaScript and jQuery are handled by using lot of functions. [string functions, math functions, array function etc..]
+                    - Angular is provided with "Validation Services".
+                    - These validation service can use HTML validations and verify values without writing much logic.
+                    - HTML validations are
+                            required
+                            minlength
+                            maxlength
+                            pattern
+                            min
+                            max
+                            number
+                            email
+                            url
+                    - Validation service is buit-in with validation functions.
+                    - The validation properties of Angular validation service are classified into 2 groups
+                                    a) Form State Validation
+                                    b) Input State Validation
+                    
+                    - Form State validation services are used to verify all fields in a form.
+                    - You can access from "ngForm" reference
+                    
+                    ServiceName        Property            Type         Description
+                    -------------------------------------------------------------------------------------
+                    NgPristine            pristine               boolean     It returns true if no field
+                                                                             in the form is modified.
+                    
+                    NgDirty                dirty                boolean     It returns true if any one
+                                                                             field in the form is                                                                  modified.
+                    
+                    NgValid                valid                boolean    It returns true when all                                                            fields in the form are valid.
+                    
+                    NgInvalid            invalid            boolean    It returns true when any
+                                                                            one field in invalid.
+                    
+                    NgSubmitted        submitted      
+                    Input State Validation Services
+                    - It verifies every field in the form inidividually and reports the error.
+                    - The input state validation servies are
+                    
+                    NgPristing            pristine
+                    NgDirty                dirty
+                    NgValid                valid
+                    NgInvalid            invalid
+                    NgTouched            touched
+                    NgUnTouched        untouched
+                    NgErrors                errors
+                </p>                errors
+             </p>
+             <h1 id="css">CSS</h1>
+             <p>Angular Forms
+                 - Angular Forms are classified into 2 types
+                         a) Template Driven Forms
+                         b) Model Driven Forms or Reactive Forms
+                 
+                 Template Driven Form
+                 - Forms are configured and handled at View level. [ in UI ]
+                 - It uses MVVM [Model-View  View-Model].
+                 - The library required for template driven form is defined in "FormsModule" of "@angular/forms".
+                 - The element is defined by using "ngForm".
+                 - The other input and form elements are defined by using "ngModel".
+                         frmRegister.value            object { key : value }
+                                                         Element Name is Key
+                                                         Element Value is its value
+                 - It reduces the number of requests.
+                 - It improves the load time.
+                 - Separation, Reusability and Extensibility issues.
+                 - UI is heavy and slow in rendering.
+                 
+                 Note: Always use tempalte forms when you want a form with stable functionality and doesn't require regular extentions.
+                 
+                 Ex:
+                  template-form.component.ts
+                 
+                  import { Component } from '@angular/core';
+                 
+                 @Component({
+                   selector: 'app-template-form',
+                   templateUrl: './template-form.component.html',
+                   styleUrls: ['./template-form.component.css']
+                 })
+                 export class TemplateFormComponent {
+                     public SubmitClick(data:any){
+                         alert(JSON.stringify(data));
+                     }
+                 }
+                  
+                
+                         frmRegister.value                             { }
+                         frmRegister.value.UserName            only user name " "
+                        
+                 - You can directly access any specific element value
+                 
+                          UserName.value
+                          Age.value
+                 
+                                     Validating Template Driven Form
+                 - Validation is the process of verifying user input.
+                 - Validation is required to ensure that contradicationary and unauthorized data is not get stored into database.
+                 - Validations can be handled
+                         a) Client Side
+                         b) Server Side
+                 - Client Side validations in JavaScript and jQuery are handled by using lot of functions. [string functions, math functions, array function etc..]
+                 - Angular is provided with "Validation Services".
+                 - These validation service can use HTML validations and verify values without writing much logic.
+                 - HTML validations are
+                         required
+                         minlength
+                         maxlength
+                         pattern
+                         min
+                         max
+                         number
+                         email
+                         url
+                 - Validation service is buit-in with validation functions.
+                 - The validation properties of Angular validation service are classified into 2 groups
+                                 a) Form State Validation
+                                 b) Input State Validation
+                 
+                 - Form State validation services are used to verify all fields in a form.
+                 - You can access from "ngForm" reference
+                 
+                 ServiceName        Property            Type         Description
+                 -------------------------------------------------------------------------------------
+                 NgPristine            pristine               boolean     It returns true if no field
+                                                                          in the form is modified.
+                 
+                 NgDirty                dirty                boolean     It returns true if any one
+                                                                          field in the form is                                                                  modified.
+                 
+                 NgValid                valid                boolean    It returns true when all                                                            fields in the form are valid.
+                 
+                 NgInvalid            invalid            boolean    It returns true when any
+                                                                         one field in invalid.
+                 
+                 NgSubmitted        submitted      
+                 Input State Validation Services
+                 - It verifies every field in the form inidividually and reports the error.
+                 - The input state validation servies are
+                 
+                 NgPristing            pristine
+                 NgDirty                dirty
+                 NgValid                valid
+                 NgInvalid            invalid
+                 NgTouched            touched
+                 NgUnTouched        untouched
+                 NgErrors                errors
+             </p>
+             <h1 id="js">JavaScript</h1>
+             <p>Angular Forms
+                 - Angular Forms are classified into 2 types
+                         a) Template Driven Forms
+                         b) Model Driven Forms or Reactive Forms
+                 
+                 Template Driven Form
+                 - Forms are configured and handled at View level. [ in UI ]
+                 - It uses MVVM [Model-View  View-Model].
+                 - The library required for template driven form is defined in "FormsModule" of "@angular/forms".
+                 - The element is defined by using "ngForm".
+                 - The other input and form elements are defined by using "ngModel".
+                         frmRegister.value            object { key : value }
+                                                         Element Name is Key
+                                                         Element Value is its value
+                 - It reduces the number of requests.
+                 - It improves the load time.
+                 - Separation, Reusability and Extensibility issues.
+                 - UI is heavy and slow in rendering.
+                 
+                 Note: Always use tempalte forms when you want a form with stable functionality and doesn't require regular extentions.
+                 
+                 Ex:
+                  template-form.component.ts
+                 
+                  import { Component } from '@angular/core';
+                 
+                 @Component({
+                   selector: 'app-template-form',
+                   templateUrl: './template-form.component.html',
+                   styleUrls: ['./template-form.component.css']
+                 })
+                 export class TemplateFormComponent {
+                     public SubmitClick(data:any){
+                         alert(JSON.stringify(data));
+                     }
+                 }
+                  
+                
+                         frmRegister.value                             { }
+                         frmRegister.value.UserName            only user name " "
+                        
+                 - You can directly access any specific element value
+                 
+                          UserName.value
+                          Age.value
+                 
+                                     Validating Template Driven Form
+                 - Validation is the process of verifying user input.
+                 - Validation is required to ensure that contradicationary and unauthorized data is not get stored into database.
+                 - Validations can be handled
+                         a) Client Side
+                         b) Server Side
+                 - Client Side validations in JavaScript and jQuery are handled by using lot of functions. [string functions, math functions, array function etc..]
+                 - Angular is provided with "Validation Services".
+                 - These validation service can use HTML validations and verify values without writing much logic.
+                 - HTML validations are
+                         required
+                         minlength
+                         maxlength
+                         pattern
+                         min
+                         max
+                         number
+                         email
+                         url
+                 - Validation service is buit-in with validation functions.
+                 - The validation properties of Angular validation service are classified into 2 groups
+                                 a) Form State Validation
+                                 b) Input State Validation
+                 
+                 - Form State validation services are used to verify all fields in a form.
+                 - You can access from "ngForm" reference
+                 
+                 ServiceName        Property            Type         Description
+                 -------------------------------------------------------------------------------------
+                 NgPristine            pristine               boolean     It returns true if no field
+                                                                          in the form is modified.
+                 
+                 NgDirty                dirty                boolean     It returns true if any one
+                                                                          field in the form is                                                                  modified.
+                 
+                 NgValid                valid                boolean    It returns true when all                                                            fields in the form are valid.
+                 
+                 NgInvalid            invalid            boolean    It returns true when any
+                                                                         one field in invalid.
+                 
+                 NgSubmitted        submitted      
+                 Input State Validation Services
+                 - It verifies every field in the form inidividually and reports the error.
+                 - The input state validation servies are
+                 
+                 NgPristing            pristine
+                 NgDirty                dirty
+                 NgValid                valid
+                 NgInvalid            invalid
+                 NgTouched            touched
+                 NgUnTouched        untouched
+                 NgErrors                errors
+             </p>
+                </div>
+            </div>  
+            </div> 
+          </div>
+        </div>
+        <script src="../node_modules/jquery/dist/jquery.js"></script>
+        <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    </body>
+</html>

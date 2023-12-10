@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+        <style></style>
+    </head>
+    <body class="container-fluid">
+        <div>
+           <h1>User Login</h1>
+           <button data-bs-toggle="modal" data-bs-target="#login" class="btn btn-primary p-2" style="width:100px;">Login</button>
+           <div class="modal modal-fullscreen" id="login">
+              <div class="modal-dialog modal-dialog-centered">
+                 <div class="modal-content">
+                    <div class="modal-header">
+                       <h3 class="bg-primary p-3 border rounded rounded-3"><span class="bi bi-person"></span> User Login</h3>
+                       <button class="btn btn-close bg-danger" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <label class="form-label">UserName</label>
+                        <div>
+                            <input type="text" class="form-control" placeholder="userName">
+                        </div>
+                        <label class="form-label">Password</label>
+                        <div>
+                            <input type="password" class="form-control" placeholder="password">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div>
+                            <button class="btn btn-primary p-2 border rounded rounded-pill">Login</button>
+                            <button class="btn btn-danger p-2 border border-1 rounded rounded-pill" data-bs-dismiss="modal">Cancel</button>
+                        </div>
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div>
+        <script src="../node_modules/jquery/dist/jquery.js"></script>
+        <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    </body>
+</html>
