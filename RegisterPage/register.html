@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+<meta charset="ISO-8859-1">
+<title>Hostel Register</title>
+  <style>
+     body{
+       background-color:yellow;
+      }
+     #container{
+      border:2px solid black;
+      width:400px;
+      border-radius:15px;
+      box-shadow:7px 6px 2px red;
+     }
+     button:hover{
+       background-color:yellow;
+     }
+     div pswd{
+      display:none;
+     }
+     div pswd:invalid{
+       display:display;
+     }
+     a{
+      text-decoration:none;
+    }
+  </style>
+  <script type="text/javascript">
+     function verifyMobile()
+     {
+    	 var mobile = document.getElementById("mobile").value;
+    	 var msg = document.getElementById("validate");
+    	 var regExp = "/[0-9]{10}/"
+    	 if(mobile.match(regExp))
+    	 { 
+            msg.className="bi bi-check2-circle input-group-text text-succes";
+   	     }
+    	 else
+         {
+            msg.className="bi bi-x-circle input-group-text text-danger";
+         }
+     }
+     function AddClick()
+     {
+    	 var pswd = document.getElementById("pwd").value;
+    	 var verify = document.getElementById("pwdmsg");
+    	 var regExp2 = "/[A-Z]{6,10}/"
+    	 if(pswd.match(regExp2))
+    	 {
+            verify.style.display="none";		 
+     	 }
+    	 else
+         {
+    		 verify.style.display="block";
+         }
+     }
+  </script>
+</head>
+<body>
+     <h1 class="bi bi-primary" style="text-align:center"><span class="bi bi-buildings"></span> Goldie</h1>
+    <div class="d-flex justify-content-center mt-5 align-items-center" style="height:700px">
+     <div id="container" class="p-4">
+       <h1>Create Account</h1>
+       <form action="register" method="POST">
+          <div class="border border-1 shadow p-4">
+             <label class="form-label">Your Name</label>
+             <div>
+                <input class="form-control" type="text" focus name="name" required>
+             </div>
+             <label class="form-label mt-2">Mobile Number</label>
+             <div class="input-group">
+                <input class="input-group-text w-25" type="text" value="+91" readonly disable>
+                <input class="form-control" onkeyup="verifyMobile()" type="text" id="mobile" name="number" required>
+                <span class="input-group-text" id="validate"></span>
+             </div>
+             <label class="form-label mt-2">Password</label>
+             <div id="pswd">
+               <input class="form-control mt-2" id="pwd" type="password" name="pswrd" required>
+             </div>
+             <span class="bi bi-exclamation mt-1" id="pwdmsg" style="display:none">Password must be Capital and at least 6 chars.</span>
+          </div>
+          <p class="mt-3">By enrolling your mobile phone number, you consent to receive automated security notifications via text message from Amazon. Message and data rates may apply.</p>
+          <button class="btn btn-warning w-100 mt-2" onclick="AddClick()"><span class="bi bi-arrow-right-circle-fill"></span> Continue</button>
+       </form>
+         <p class="mt-5">Already have an account? <a href=login.html>Sign in</a></p>
+         <p class="mt-3">By creating an account or logging in, you agree to Hostel's <a href=#>Conditions of Use</a> and <a href=#>Privacy Policy</a>.</p>
+     </div>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+</html>
