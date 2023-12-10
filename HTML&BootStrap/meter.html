@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+        <style>
+           meter{
+            width: 100%;
+            height: 30px;
+           } 
+        </style>
+    </head>
+    <body class="container">
+       <dl>
+        <dt>Strong Password</dt>
+         <dd>
+            <meter min="1" max="100" value="100"></meter>
+         </dd>
+         <dt>Weak Password</dt>
+         <dd>
+            <meter min="1" max="100" value="100" low="40" high="80"></meter>
+         </dd>
+         <dt>Loose Password</dt>
+         <dd>
+            <meter min="1" max="100" value="100" low="80" high="80"></meter>
+         </dd>
+       </dl>
+    </body>
+</html>

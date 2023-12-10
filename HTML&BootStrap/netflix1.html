@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Netflix</title>
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+        <style>
+            body{
+                background: url(./assets/netflixBack.jpg);
+            }
+           header{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+           }
+           #m-right{
+            margin-right: 100px;
+           }
+           #m-left{
+            margin-left: 100px;
+           }
+          button,select{
+             width: 100px;
+             height: 40px;
+             border: none; 
+          }
+          #content{
+            color: white;
+            text-align: center;
+          }
+          #form{
+            margin-left: 700px;
+           
+          }
+        </style>
+    </head>
+    <body>
+       <header>
+            <div id="m-left" class="input-group-lg">
+                <font style="color:red">
+                  <font size="5">N</font>
+                  <font size="6">E</font>
+                  <font size="6">T</font>
+                  <font size="6">F</font>
+                  <font size="6">L</font>
+                  <font size="6">I</font>
+                  <font size="5">X</font>
+                </font>
+            </div>
+            <div id="m-right">
+                <select name="sele">
+                    <option>Language</option>
+                    <option>English</option>
+                    <option>Hindi</option>
+                </select>
+               <button class="btn btn-danger">Sign In</button>
+            </div>
+       </header>>
+       <section>
+          <div id="content">
+             <h1>Unlimited movies, TV shows and more.</h1>
+             <h4>Watch anywhere. Cancel anytime.</h4>
+             <p>Ready to watch? Enter your email to create or restart your membership.</p>
+             <div class="input-group" id="form">
+                <input type="email" name="email" placeholder="your email address">
+                <button class="btn btn-danger">Get Started</button>
+                <span class="bi bi-chevron-right"></span>
+             </div>
+          </div>
+       </section>
+       <footer>
+          <p>&copy; copyright 2023</p>
+       </footer>
+    </body>
+</html>

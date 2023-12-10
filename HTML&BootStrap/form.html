@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+       <title>forms</title>
+        <style>
+            form{
+               
+                border: 2px solid;
+                width: 300px;
+                height: 300px;
+                padding: 20px;
+                box-shadow: 3px 3px 2px gray;
+            }
+            input{
+                margin-bottom: 10px;
+            }
+        </style>
+    </head>
+    <body >
+       <div align="center">
+        <h1>Application Form</h1>
+        <form method="post" novalidate>
+           userName: <input type="text" name="uName" required> <br>
+           password: <input type="password" name="pwd" required> <br>
+           <button name="sub">Submit</button>
+        </form>
+       </div>
+    </body>
+</html>

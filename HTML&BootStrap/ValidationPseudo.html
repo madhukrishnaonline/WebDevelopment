@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+        <title>CSS</title>
+        <style type="text/css">
+             .username:invalid+span{
+                 color: red;
+                 display: block;
+             }
+             .username:valid+span{
+                display: none;
+             }
+             input:invalid{
+                border: 2px solid red;
+             }
+             input:valid{
+                border: 2px solid green;
+             }
+             #pwd:invalid+span{
+                 display: block;
+                 color: red;
+             }
+             #pwd:valid+span{
+                 display:none;
+             }
+             #age:out-of-range+span{
+                    display: block;
+                    color: red;
+             }
+             #age:in-range+span{
+                display: none;
+             }
+        </style>
+    </head>
+    <body class="container-fluid">
+       <form class="mt-4">
+        <div>
+            <dt>UserName</dt>
+            <dd>
+                <input class="username" type="text" required> 
+                <span>UserName Required</span>
+            </dd>
+            <dt> password</dt>
+            <dd>
+                <input id="pwd" type="password" required pattern="[A-Z]{4,10}">
+                <span>password 4 to 10 uppercase only</span>
+            </dd>
+            <dt>Age</dt>
+            <dd>
+                <input type="number" id="age" required min="15" max="30">
+                <span>Age Must be in b/w 15 to 30</span>
+            </dd>
+        </div>
+        <button>Submit</button>
+       </form>
+    </body>
+</html>

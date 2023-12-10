@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+        <style>
+
+        </style>
+    </head>
+    <body class="container">
+        <h1>Regular Expression</h1>
+        <h3>Quantifiers</h3>
+        <form action="">
+            <dl>
+                <dt>\d{4}</dt>
+                <dd>
+                    <input type="text" name="{4}" pattern="\d{4}">
+                </dd>
+                <dt>\d{4,}</dt>
+                <dd>
+                    <input type="text" name="{4,}" pattern="\d{4,}">
+                </dd>
+                <dt>\d{4,10}</dt>
+                <dd>
+                    <input type="text" name="[4,10]" pattern="\d{4,10}">
+                </dd>
+            </dl>
+            <p><button>Submit</button></p>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+          div>h3{
+            background-color: aqua;
+          }
+          h2~p{
+            background-color:red
+          }
+          h3+p{
+            background-color: chocolate;
+          }
+        </style>
+    </head>
+    <body>
+        <h1>Rational Selectors</h1>
+        <p>Rational Selectors defines effects for child parent heirarchy</p>
+        <div class="child-selector">
+            <h3>Primary Selectors</h3>
+            <h3>Rational Selectors</h3>
+            <h3>Combinators</h3>
+            <dd class="descendant-selector">
+                <h3>Structural Selectors</h3>
+                <h3>Pseudo Selectors</h3>
+            </dd>
+        </div>
+        <h2>Combinators</h2>
+        <p>General Siblings</p>
+        <p>General Siblings</p>
+        <p>General Siblings</p>
+       <dd>
+        <h3>Combinators</h3>
+        <p>Adjacent Siblings</p>
+        <p>Adjacent Siblings</p>
+       </dd>
+    </body>
+</html>

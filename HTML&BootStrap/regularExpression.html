@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="refresh" content="">
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+        <title>expression</title>
+        <style>
+            form{
+                display: grid;
+                grid-template-columns: 3fr 3fr 3fr;
+                border: 1px solid;
+                padding: 10px;
+            }
+        </style>
+    </head>
+    <body class="container">
+        <h2>Regular Expressions</h2>
+        <h3>Meta Characters</h3>
+        <form action="">
+            <dl>
+                <dt>?[question]</dt>
+                <dd>
+                    UserName:<input type="text" name="uname" pattern="colou?r">
+                </dd>
+                <dt>+[plus]</dt>
+                <dd>
+                   UserName:<input type="text" name="fname" pattern="colou+r">
+                </dd>
+                <dt>*[astrick]</dt>
+                <dd>
+                    UserName:<input type="text" name="lname" pattern="colou*r"
+                </dd>
+                <dt>.[dot]</dt>
+                <dd>
+                    UserName:<input type="text" name="single" pattern="..hn..">
+                </dd>
+                <dt>|[pipe]</dt>
+                <dd>
+                    Colour:<input type="text" name="color" pattern="red|green|blue">
+                </dd>
+                </dl>
+                <dl>
+                <dt>\d</dt>
+                <dd>
+                    Enter Number<input type="text" name="number" pattern="\d\d">
+                </dd>
+                <dt>\D</dt>
+                <dd>
+                    Non-Numeric<input type="text" name="non-numeric" pattern="\D">
+                </dd>
+                <dt>\w</dt>
+                <dd>
+                    <input type="text" name="\w" pattern="\w">
+                </dd>
+                <dt>\W</dt>
+                <dd>
+                    <input type="text" name="\W" pattern="\W">
+                </dd>
+                <dt>\s</dt>
+                <dd>
+                    <input type="text" name="\s" pattern="\s">
+                </dd>
+                <dt>\d\s\W</dt>
+                <dd>
+                    <input type="text" name="\d\s\W" pattern="\d\s\W">
+                </dd>
+                <dt>\i</dt>
+                <dd>
+                    <input type="text" name="\i" pattern="\icolor">
+                </dd>
+            </dl>
+            <dl>
+                <dt>[A-Z]</dt>
+                <dd>
+                    <input type="text" name="[A-Z]" pattern="[A-Za-z0-9]">
+                </dd>
+                <dt>[b-g]</dt>
+                <dd>
+                    <input type="text" name="[b-g]" pattern="[b-g]">
+                </dd>
+                <dt>[a,b,c]</dt>
+                <dd>
+                    <input type="text" name="[a,b,c]" pattern="[a,b,c]">
+                </dd>
+                <dt>[^a-z]</dt>
+                <dd>
+                    <input type="text" name="[^a-z]" pattern="[^a-z]">
+                </dd>
+            </dl>
+            <p><button>Register</button></p>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <style>
+         .topic{
+            border: 5px solid gray;
+            margin-bottom: 10px;
+            padding: 10px;
+         }
+         .topic:target{
+            background-color: black;
+            color: white;
+         }
+         .topic:hover{
+            background-color: yellow;
+            color: yellowgreen;
+         }
+         ul{
+            display: flex;
+         }
+         li{
+            margin-left: 40px;
+            font-size: 30px;
+         }
+         a{
+            text-decoration: none;
+         }
+         a:hover{
+            text-decoration: underline;
+            background-color: green;
+            color: darkorange;
+         }
+      </style>
+    </head>
+    <body>
+        <div>
+            <ul>
+                <li><a href="#html">HTML</a></li>
+                <li><a href="#css">CSS</a></li>
+                <li><a href="#js">JavaScript</a></li>
+            </ul>
+        </div>
+       <div class="topic" id="html">
+          <h3>HTML</h3>
+          <p>It is a Markup Language</p>
+       </div>        
+       <div class="topic" id="css">
+          <h3>CSS</h3>
+          <p>It is defines styles for HTML</p>
+       </div>
+          <div class="topic" id="js">
+            <h3>JavaScript</h3>
+            <p>It is a Language for handling Client Interactions..</p>
+       </div>
+    </body>
+</html>

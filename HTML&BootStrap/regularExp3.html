@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+        <style>
+
+        </style>
+    </head>
+    <body class="container">
+        <h1>Regular Expressions & Quantifiers</h1>
+        <form action="">
+            <dl>
+                <dt>Name only uppercase letters 4 to 15 chars</dt>
+                <dd>
+                    <input type="text" name="name" pattern="[A-Z]{4,15}">
+                </dd>
+                <DT>Password alpha-numeric with _ and specific chars range 4 to 15</DT>
+                <dd>
+                    <input type="text" name="Password" pattern="\w[!@#$%&]{4,15}">
+                </dd>
+                <dt>Bank IFSC Code </dt>
+                <dd>
+                    <input type="text" NAME="ifsc" pattern="SBI\d{4}[A-Z]{2}">
+                </dd>
+                <dt>Mobile Number</dt>
+                <dd>
+                    <input type="text" name="mobile" pattern="\+91[0-9]{10}">
+                </dd>
+                <dt>Password 4 to 15 alpha-numeric with atleast one Uppercase</dt>
+                <dd>
+                    <input type="password" name="pwd" pattern="(?=.*[A-Z])\w{4,15}">
+                </dd>
+                <dt>password 4 to 15 with alpha-numeric with atleast one special char</dt>
+                <dd>
+                    <input type="text" name="text" pattern="(?=.*[!@#$%&])\w[!@#$%&]{4,15}">
+                </dd>
+            </dl>
+            <p><button>Submit</button></p>
+        </form>
+    </body>
+</html>

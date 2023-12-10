@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="refresh" content="10">
+       <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+       <title>FaceBook</title>
+       <style>
+        #container{
+            border: 2px solid black;
+            width: 250px;
+            height: 180px;
+           
+        }
+         input{
+            width: 200px;
+            padding: 5px;
+            margin: 5px;
+            border: 1px solid gray;
+            border-radius: 5px;
+         }
+         button{
+            width: 200px;
+            padding: 5px;
+            background-color: blue;
+            color: white;
+            border-radius: 5px;
+         }
+       </style>
+    </head>
+    <body>
+        <div align="center">
+            <h1 class="bi bi-facebook"></h1>
+            <div id="container">
+                <span>Login in to FaceBook</span>
+                <div id="login">
+                <input type="text" name="UserName" id="fb" placeholder="phone number or email-address" required minlength="4"><br>
+                <input type="password" name="password" id="fb" required minlength="8">
+                </div>
+                <div>
+                    <button class="bi bi-person">Login</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

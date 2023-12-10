@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style type="text/css">
+            p[id=Effects]{
+               background-color: red;
+            }
+            p[id$=Effects]{
+                background-color: cyan;
+            }
+            p[id^=Effects]{
+                background-color: yellow;
+            }
+             h1[id$=para]{
+                background-color: chocolate;
+            }
+            h1[id|=para]{
+                background-color: brown;
+            }
+            h1[id~=para]{
+                 background-color: blueviolet;
+            }
+            h1[id]{
+                background-color: burlywood;
+            }
+            :root{
+                background-color: brown;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div>
+
+        </div>
+       <div>
+        <h1 id="para">para1</h1>
+        <h1 id="para-value">para2</h1>
+        <h1 id="para-name">para3</h1>
+        <h1 id="para-para">para4</h1>
+        <h1 id="para prop">para5</h1>
+       </div>
+        <div>
+         <p id="Effects">Attribute Selectors</p>
+         <p id="Effects Sel">Primary Selectors</p>
+         <p id="Effects-Rate">Rational Selectors</p>
+         <p id="Effects-pseudo">Pseudo Selectors</p>
+         <p id="Effects structural">Structural Selectors</p>
+         <p id="attribute-Effects">Attribute Conditions</p>
+        </div>
+    </body>
+</html>

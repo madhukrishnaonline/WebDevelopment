@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>register</title>
+        <style>
+
+        </style>
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    </head>
+    <body>
+        <form class="container" onsubmit="alert('Confirm Submit')" onreset="alert('Confirm Cancel')">
+         <fieldset>
+            <legend><span class="bi bi-people">Register user</span> </legend>
+                <dl>
+                    <dt>UserName</dt>
+                    <dd>
+                        <input type="text" autofocus value="john" name="uname"><br>
+                    </dd>
+                    <dt>Password</dt>
+                    <dd>
+                        <input type="password" name="pwrd"><br>
+                    </dd>
+                </dl> 
+                <input type="submit"> <input type="reset" value="cancel">
+         </fieldset>
+        </form>
+        <hr>
+        <form class="container">
+            <fieldset>
+                <legend>DataBase Operations</legend>
+                  <button type="submit" name="action" value="insert">Insert</button>
+                  <button type="submit" name="action" value="update">Update</button>
+                  <button type="submit" name="action" value="Delete">Delete</button>
+            </fieldset>
+        </form>
+    </body>
+</html>

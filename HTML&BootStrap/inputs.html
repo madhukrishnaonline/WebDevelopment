@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <style>
+        #image{
+            width: 500px;
+            height: 600px;
+        }
+    </style>
+    </head>
+    <body>
+        <h1>Register</h1>
+        <form action="">
+            <dl>
+                <dt>URL</dt>
+                <dd>
+                    <input type="url" name="url" placeholder="enter url">
+                </dd>
+                <dt>Upload your image</dt>
+                <dd>
+                    <input type="file" name="file" accept=".png|.jpg">
+                </dd>
+                <dt>Image</dt>
+                <dd>
+                    <input type="image" name="image" id="image" src="./assets/Attention.jpg">
+                </dd>
+                <dt>Select Color</dt>
+                <dd>
+                    <input type="color" name="color" value="#ff0000">
+                </dd>
+            </dl>
+            <input type="submit">
+        </form>
+    </body>
+</html>

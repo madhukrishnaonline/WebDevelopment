@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h1>Register Form</h1>
+       <form action="get">
+        <div>
+            <dl>
+                <dt>username</dt>
+                <dd>
+                    <input type="text" name="uname" autofocus placeholder="your_name" size="30" minlength="5" maxlength="15" required>
+                </dd>
+                <dt>Gender</dt>
+                <dd>
+                    <input type="radio" name="Gender" value="male" checked>Male
+                    <input type="radio" name="Gender" value="female">Female
+                </dd>
+                <dt>Age</dt>
+                <dd>
+                    <input type="number" name="age" min="15" max="90">
+                </dd>
+                <dt>Date of Birth</dt>
+                <dd>
+                    <input type="date" name="dob" min="2000-01-01" max="2099-12-31">
+                </dd>
+                <dt>Time of Birth</dt>
+                <dd>
+                    <input type="time" name="dot">
+                </dd>
+                <dt>Salary</dt>
+                <dd>
+                    <input type="range" name="sal" value="100000" min="100000" max="1000000" step="100000">
+                </dd>
+                <dt>Your Number</dt>
+                <dd>
+                    <input type="tel" name="telephone" pattern="[0-9]{10}">
+                </dd>
+                <dt>Your E-mail</dt>
+                <dd>
+                    <input type="email" name="email">
+                </dd>
+                <dt>Upload Your Photo</dt>
+                <dd>
+                    <input type="file" name="photo" multiple>
+                </dd>
+            </dl>
+        </div>
+        <p><button>Submit</button></p>
+       </form>
+    </body>
+</html>
