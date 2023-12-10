@@ -1,0 +1,59 @@
+<script>
+   function fun()
+    {
+        function hello(username)
+        {
+            return "Hello "+ username;
+        }
+        document.write(hello(window.prompt("Enter your username")));
+    }
+    fun();
+    function test()
+    {
+        function add(a,b)
+        {
+           return a + b;
+        }
+        document.write("Addition = "+ add(35,57));
+    }
+    test();
+    function fun()
+    {
+        var mk = function(a,b)
+        {
+            return a*b;
+        }
+        document.write(`Multiplication is ${mk(window.prompt("Enter First Number"),window.prompt("Enter Second Number"))}`);
+    }
+    fun(); 
+    function fun()
+    {
+        (function(arr)
+        {
+            return 
+            for(var bio of arr)
+            {
+                document.write(`${bio}<br>`);
+            }
+            ;
+        })(document.write(["Madhu Krishna",23,"Java Developer",40000.00]));
+    }
+    fun();
+    function arr()
+    {
+        function getData()
+        {
+            return 
+            [
+                {Name:"Madhu Krishna",Age:23,job:"Java Developer",sal:40000.00},
+                {Name:"Lokesh",Age:23,job:"Java Developer",sal:40000.00},
+                {Name:"Naresh",Age:23,job:"Java Developer",sal:40000}
+            ];
+        }
+        for(var bio of getData())
+        {
+            document.write(bio.toString()+"<br>");
+        } 
+    }
+    arr();
+</script>

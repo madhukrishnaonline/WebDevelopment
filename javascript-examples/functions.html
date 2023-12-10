@@ -1,0 +1,72 @@
+<script>
+    (function()
+    {
+        document.write("Welcome to JavaScript");
+    })();
+    var hello = function()
+    {
+        document.write("Welcome to JavaScript");
+    }
+    hello();
+    (function(startcount,endcount)
+    {
+        for(var i=startcount;i<=endcount;i++)
+        {
+            document.write(i+ "<br>");
+        }
+    })(15,25);
+    (function(username,password,success,failure)
+    {
+        if(username=="Madhu143" && password=="mk123")
+        {
+            success();
+        }
+        else{
+            failure();
+        }
+    })
+    ("Madhu143","mk123",function(){document.write("Login success")},function(){document.write("Login failure")});
+    (function(bio)
+    {
+        for(var bioo of bio)
+        {
+           document.write(bioo +"<br>");
+        }
+
+        var collection;
+    })(collection = ["java","html","css","js"]);
+    function fun()
+    {
+        var data = [function(){document.write("Madhu")},function(){document.write("Krishna")}];
+        var [madhu,krishna] = data;
+       document.write(madhu +" "+krishna);
+        madhu(); document.write("<br>");
+        krishna();
+        var name = window.prompt("Enter Name :: ");
+        if(name=="Madhu")
+        {
+           document.writeln("your Name is :") + madhu();
+        }
+        else if(name=="Krishna")
+        {
+            document.writeln("your Name is :") + krishna();
+        }
+        else{
+            document.writeln("Invalid name");
+        }
+    }
+    fun();
+    (function(obj)
+    {
+        for(var bio in obj){
+           document.writeln(`${bio}- ${obj[bio]} <br>`);
+        }
+    })({Name:"Madhu",Age:23,Job:"Java Developer",Sal:49000});
+     (function(...args) 
+     {
+        for(var collection of args)
+        {
+            document.write(collection+"<br>");
+        }
+     })("Madhu Krishna",23,"Java Developer",40000);
+</script>

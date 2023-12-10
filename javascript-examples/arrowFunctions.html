@@ -1,0 +1,51 @@
+<script>
+    function fun()
+    {
+       var arg = (username,password) => 
+       {
+         if(username=="Madhu123" && password=="mk1234") 
+         {
+             document.write("Login Success");
+         }
+         else{
+            document.write("Invalid username/password...");
+         }
+      }
+       arg(window.prompt("Enter username"),window.prompt("Enter password"));
+    }
+    fun();
+    function fun()
+    {
+         (a,b)=>
+         {
+            return a/b;
+         };
+         document.write("Division = "+((22,2)));
+    }
+    fun();
+    function fun()
+    {
+        var div = (a,b)=>
+        {
+            return a/b;
+        }
+        document.write("div "+div(22,2));
+    }
+    fun();
+   function fun()
+    {
+        var  bio = 
+        [
+            {Name:"Madhu Krishna",Age:23,job:"Java Developer",sal:40000.00},
+            {Name:"Lokesh",Age:23,job:"Java Developer",sal:40000.00},
+            {Name:"Naresh",Age:23,job:"Java Developer",sal:40000}
+        ];
+         var data = bio.filter(details=>details.job=="Java Developer");
+        for(var bioo of data)
+        {
+            document.write(bioo.Name+"<br>");
+        }
+    }
+    fun();
+    
+</script>
